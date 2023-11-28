@@ -12,12 +12,23 @@ class AllPokemonViewController: UIViewController {
     
     //MARK: - V A R I A B L E S
     var presenter: AllPokemon_ViewToPresenterProtocol?
+    let search = UISearchController(searchResultsController: nil)
+    var isSearchEmpty : Bool {return search.searchBar.text?.isEmpty ?? true}
+    var isFiltering : Bool {return search.isActive && !isSearchEmpty}
     var arrAllPokemon: [AllPokemonEntries] = []
+    var arrFilterPokemon: [AllPokemonEntries]?
 
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
+        self.setTableView()
+        self.setUpSearchBar()
+        self.setUpSearchBarProperties()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.view.activityStartAnimating()
         presenter?.viewDidLoad()
     }
     
@@ -26,14 +37,29 @@ class AllPokemonViewController: UIViewController {
         self.tblAllPokemon.dataSource = self
         self.tblAllPokemon.registerCell(type: AllPokemonTableViewCell.self, identifier: AllPokemonTableViewCell.identifier)
     }
+    
+    private func setUpSearchBar() {
+        self.search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.searchTextField.placeholder = "Search your Card"
+        self.navigationItem.searchController = search
+        definesPresentationContext = true
+    }
+    
+    private func setUpSearchBarProperties() {
+        search.automaticallyShowsCancelButton = true
+        search.automaticallyShowsScopeBar = true
+        search.automaticallyShowsSearchResultsController = true
+    }
 }
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension AllPokemonViewController: AllPokemon_PresenterToViewProtocol {
     func updateView(from pokemon: AllPokemonResponse) {
         guard let pokemon = pokemon.pokemonEntries else { return }
-        self.arrAllPokemon = pokemon
         DispatchQueue.main.async {
+            self.arrAllPokemon = pokemon
+            self.view.activityStopAnimating()
             self.tblAllPokemon.reloadData()
         }
     }
