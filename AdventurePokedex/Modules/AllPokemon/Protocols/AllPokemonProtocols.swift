@@ -104,3 +104,8 @@ protocol AllPokemon_PresenterToViewProtocol: AnyObject {
 // MARK: PRESENTER -> ROUTER
 protocol AllPokemon_PresenterToRouterProtocol: AnyObject {
 }
+
+
+protocol PathsProtocol {
+    var strPathToUse: String { get }
+}

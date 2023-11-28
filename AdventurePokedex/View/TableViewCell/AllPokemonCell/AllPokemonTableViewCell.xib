@@ -22,7 +22,10 @@
                         <rect key="frame" x="8" y="8" width="304" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0000)(Name Pokemon)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqq-hl-PBg">
-                                <rect key="frame" x="8" y="11.5" width="288" height="21"/>
+                                <rect key="frame" x="8" y="11" width="288" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="9dk-9K-BrI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +36,7 @@
                             <constraint firstAttribute="trailing" secondItem="Oqq-hl-PBg" secondAttribute="trailing" constant="8" id="9pN-0G-eFp"/>
                             <constraint firstItem="Oqq-hl-PBg" firstAttribute="leading" secondItem="p3v-IU-R1F" secondAttribute="leading" constant="8" id="aKZ-cr-5AW"/>
                             <constraint firstItem="Oqq-hl-PBg" firstAttribute="centerY" secondItem="p3v-IU-R1F" secondAttribute="centerY" id="nvg-mJ-UyJ"/>
-                            <constraint firstAttribute="height" constant="44" id="sbb-aZ-f0I"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="sbb-aZ-f0I"/>
                         </constraints>
                     </view>
                 </subviews>
