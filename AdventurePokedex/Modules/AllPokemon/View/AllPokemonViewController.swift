@@ -12,11 +12,13 @@ class AllPokemonViewController: UIViewController {
     
     //MARK: - V A R I A B L E S
     var presenter: AllPokemon_ViewToPresenterProtocol?
+    var arrAllPokemon: [AllPokemonEntries] = []
 
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        presenter?.viewDidLoad()
     }
     
     //MARK: - S E T · U P · V I E W
@@ -28,4 +30,16 @@ class AllPokemonViewController: UIViewController {
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension AllPokemonViewController: AllPokemon_PresenterToViewProtocol {
+    func updateView(from pokemon: AllPokemonResponse) {
+        guard let pokemon = pokemon.pokemonEntries else { return }
+        self.arrAllPokemon = pokemon
+        DispatchQueue.main.async {
+            self.tblAllPokemon.reloadData()
+        }
+    }
+    
+    func update(with error: Error) {
+        self.showAlert(andMessage: error.localizedDescription)
+    }
+    
 }

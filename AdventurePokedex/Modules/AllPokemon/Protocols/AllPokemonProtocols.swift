@@ -26,6 +26,8 @@ protocol AllPokemon_ViewToPresenterProtocol: AnyObject {
 	var view: AllPokemon_PresenterToViewProtocol? { get set }
 	var interactor: AllPokemon_PresenterToInteractorProtocol? { get set }
 	var router: AllPokemon_PresenterToRouterProtocol? { get set }
+    
+    func viewDidLoad()
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -49,6 +51,9 @@ protocol AllPokemon_ViewToPresenterProtocol: AnyObject {
 // MARK: PRESENTER -> INTERACTOR
 protocol AllPokemon_PresenterToInteractorProtocol: AnyObject {
     var presenter: AllPokemon_InteractorToPresenterProtocol? { get set }
+    
+    func getAllPokemon()
+    
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -71,6 +76,10 @@ protocol AllPokemon_PresenterToInteractorProtocol: AnyObject {
 
 // MARK: INTERACTOR -> PRESENTER
 protocol AllPokemon_InteractorToPresenterProtocol: AnyObject {
+    
+    func getAllPokemonFromInteractor(withPokemon pokemon: AllPokemonResponse)
+    func errorFromInteractor(with error: Error)
+    
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -88,6 +97,9 @@ protocol AllPokemon_InteractorToPresenterProtocol: AnyObject {
 // MARK: PRESENTER -> VIEW
 protocol AllPokemon_PresenterToViewProtocol: AnyObject {
     var presenter: AllPokemon_ViewToPresenterProtocol? { get set }
+    
+    func updateView(from pokemon: AllPokemonResponse)
+    func update(with error: Error)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

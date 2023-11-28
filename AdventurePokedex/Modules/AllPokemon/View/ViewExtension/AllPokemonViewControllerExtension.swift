@@ -6,11 +6,13 @@ import UIKit
 
 extension AllPokemonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        self.arrAllPokemon.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueCell(withType: AllPokemonTableViewCell.self, for: indexPath) else { return UITableViewCell()}
+        let cell = tableView.dequeueCell(withType: AllPokemonTableViewCell.self, 
+                                         for: indexPath) as? AllPokemonTableViewCell ?? AllPokemonTableViewCell()
+        cell.setUpCell(with: self.arrAllPokemon[indexPath.row])
         return cell
     }
     
