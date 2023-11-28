@@ -8,7 +8,7 @@ import UIKit
 class AllPokemonViewController: UIViewController {
     //MARK: - O U T L E T S
     @IBOutlet weak var tblAllPokemon: UITableView!
-
+    @IBOutlet weak var lblTitle: UILabel!
     
     //MARK: - V A R I A B L E S
     var presenter: AllPokemon_ViewToPresenterProtocol?
@@ -16,6 +16,13 @@ class AllPokemonViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTableView()
+    }
+    
+    //MARK: - S E T · U P · V I E W
+    private func setTableView(){
+        self.tblAllPokemon.dataSource = self
+        self.tblAllPokemon.registerCell(type: AllPokemonTableViewCell.self, identifier: AllPokemonTableViewCell.identifier)
     }
 }
 

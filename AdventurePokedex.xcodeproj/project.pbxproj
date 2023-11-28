@@ -18,6 +18,12 @@
 		A43FD16C2B15B903007ADE79 /* AllPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1672B15B903007ADE79 /* AllPokemonViewController.swift */; };
 		A43FD16D2B15B903007ADE79 /* AllPokemonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1682B15B903007ADE79 /* AllPokemonProtocols.swift */; };
 		A43FD16E2B15B903007ADE79 /* AllPokemonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1692B15B903007ADE79 /* AllPokemonInteractor.swift */; };
+		A43FD1702B15BA6E007ADE79 /* AllPokemonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43FD16F2B15BA6E007ADE79 /* AllPokemonViewController.xib */; };
+		A43FD1762B15BBAC007ADE79 /* AllPokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1742B15BBAC007ADE79 /* AllPokemonTableViewCell.swift */; };
+		A43FD1772B15BBAC007ADE79 /* AllPokemonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A43FD1752B15BBAC007ADE79 /* AllPokemonTableViewCell.xib */; };
+		A43FD1802B15BD0B007ADE79 /* AllPokemonViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD17F2B15BD0B007ADE79 /* AllPokemonViewControllerExtension.swift */; };
+		A43FD1842B15BE6E007ADE79 /* TableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1832B15BE6E007ADE79 /* TableViewCell+Extension.swift */; };
+		A43FD1872B15BF56007ADE79 /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1862B15BF56007ADE79 /* TableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		A43FD1672B15B903007ADE79 /* AllPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonViewController.swift; sourceTree = "<group>"; };
 		A43FD1682B15B903007ADE79 /* AllPokemonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonProtocols.swift; sourceTree = "<group>"; };
 		A43FD1692B15B903007ADE79 /* AllPokemonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonInteractor.swift; sourceTree = "<group>"; };
+		A43FD16F2B15BA6E007ADE79 /* AllPokemonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPokemonViewController.xib; sourceTree = "<group>"; };
+		A43FD1742B15BBAC007ADE79 /* AllPokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonTableViewCell.swift; sourceTree = "<group>"; };
+		A43FD1752B15BBAC007ADE79 /* AllPokemonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllPokemonTableViewCell.xib; sourceTree = "<group>"; };
+		A43FD17F2B15BD0B007ADE79 /* AllPokemonViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonViewControllerExtension.swift; sourceTree = "<group>"; };
+		A43FD1832B15BE6E007ADE79 /* TableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		A43FD1862B15BF56007ADE79 /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,8 @@
 		A405FC962B158AB50088D8FA /* AdventurePokedex */ = {
 			isa = PBXGroup;
 			children = (
+				A43FD1812B15BE30007ADE79 /* Extension */,
+				A43FD1712B15BB78007ADE79 /* View */,
 				A405FCAB2B158B8F0088D8FA /* Modules */,
 				A405FC972B158AB50088D8FA /* AppDelegate.swift */,
 				A405FC992B158AB50088D8FA /* SceneDelegate.swift */,
@@ -89,13 +103,121 @@
 		A405FCB02B158DE90088D8FA /* AllPokemon */ = {
 			isa = PBXGroup;
 			children = (
-				A43FD1652B15B903007ADE79 /* AllPokemonPresenter.swift */,
-				A43FD1662B15B903007ADE79 /* AllPokemonRouter.swift */,
-				A43FD1672B15B903007ADE79 /* AllPokemonViewController.swift */,
-				A43FD1682B15B903007ADE79 /* AllPokemonProtocols.swift */,
-				A43FD1692B15B903007ADE79 /* AllPokemonInteractor.swift */,
+				A43FD17C2B15BC8E007ADE79 /* View */,
+				A43FD17B2B15BC86007ADE79 /* Interactor */,
+				A43FD17A2B15BC81007ADE79 /* Presenter */,
+				A43FD17D2B15BCCC007ADE79 /* Protocols */,
+				A43FD1792B15BC79007ADE79 /* Entity */,
+				A43FD1782B15BC70007ADE79 /* Router */,
 			);
 			path = AllPokemon;
+			sourceTree = "<group>";
+		};
+		A43FD1712B15BB78007ADE79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1722B15BB82007ADE79 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A43FD1722B15BB82007ADE79 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1732B15BB93007ADE79 /* AllPokemonCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		A43FD1732B15BB93007ADE79 /* AllPokemonCell */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1742B15BBAC007ADE79 /* AllPokemonTableViewCell.swift */,
+				A43FD1752B15BBAC007ADE79 /* AllPokemonTableViewCell.xib */,
+			);
+			path = AllPokemonCell;
+			sourceTree = "<group>";
+		};
+		A43FD1782B15BC70007ADE79 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1662B15B903007ADE79 /* AllPokemonRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A43FD1792B15BC79007ADE79 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A43FD17A2B15BC81007ADE79 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1652B15B903007ADE79 /* AllPokemonPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A43FD17B2B15BC86007ADE79 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1692B15B903007ADE79 /* AllPokemonInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A43FD17C2B15BC8E007ADE79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD17E2B15BCF2007ADE79 /* ViewExtension */,
+				A43FD1672B15B903007ADE79 /* AllPokemonViewController.swift */,
+				A43FD16F2B15BA6E007ADE79 /* AllPokemonViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A43FD17D2B15BCCC007ADE79 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1682B15B903007ADE79 /* AllPokemonProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A43FD17E2B15BCF2007ADE79 /* ViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD17F2B15BD0B007ADE79 /* AllPokemonViewControllerExtension.swift */,
+			);
+			path = ViewExtension;
+			sourceTree = "<group>";
+		};
+		A43FD1812B15BE30007ADE79 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1852B15BF36007ADE79 /* TableViewExtension */,
+				A43FD1822B15BE4C007ADE79 /* TableViewCellExtension */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A43FD1822B15BE4C007ADE79 /* TableViewCellExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1832B15BE6E007ADE79 /* TableViewCell+Extension.swift */,
+			);
+			path = TableViewCellExtension;
+			sourceTree = "<group>";
+		};
+		A43FD1852B15BF36007ADE79 /* TableViewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A43FD1862B15BF56007ADE79 /* TableView+Extension.swift */,
+			);
+			path = TableViewExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,7 +280,9 @@
 			files = (
 				A405FCA42B158AB70088D8FA /* LaunchScreen.storyboard in Resources */,
 				A405FCA12B158AB70088D8FA /* Assets.xcassets in Resources */,
+				A43FD1702B15BA6E007ADE79 /* AllPokemonViewController.xib in Resources */,
 				A405FC9F2B158AB50088D8FA /* Main.storyboard in Resources */,
+				A43FD1772B15BBAC007ADE79 /* AllPokemonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,11 +293,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43FD1802B15BD0B007ADE79 /* AllPokemonViewControllerExtension.swift in Sources */,
 				A43FD16C2B15B903007ADE79 /* AllPokemonViewController.swift in Sources */,
 				A405FC9C2B158AB50088D8FA /* ViewController.swift in Sources */,
 				A43FD16E2B15B903007ADE79 /* AllPokemonInteractor.swift in Sources */,
+				A43FD1842B15BE6E007ADE79 /* TableViewCell+Extension.swift in Sources */,
 				A405FC982B158AB50088D8FA /* AppDelegate.swift in Sources */,
 				A43FD16B2B15B903007ADE79 /* AllPokemonRouter.swift in Sources */,
+				A43FD1872B15BF56007ADE79 /* TableView+Extension.swift in Sources */,
+				A43FD1762B15BBAC007ADE79 /* AllPokemonTableViewCell.swift in Sources */,
 				A43FD16A2B15B903007ADE79 /* AllPokemonPresenter.swift in Sources */,
 				A405FC9A2B158AB50088D8FA /* SceneDelegate.swift in Sources */,
 				A43FD16D2B15B903007ADE79 /* AllPokemonProtocols.swift in Sources */,

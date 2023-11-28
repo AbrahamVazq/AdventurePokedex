@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllPokemonViewController" customModule="AdventurePokedex" customModuleProvider="target">
             <connections>
-                <outlet property="tblAllPokemon" destination="Pbd-yb-c2Q" id="7Wh-pD-Kt2"/>
+                <outlet property="lblTitle" destination="aPL-vg-Vzk" id="oeP-oH-zlS"/>
+                <outlet property="tblAllPokemon" destination="HgI-1S-Xnh" id="ofK-Jy-Y30"/>
+                <outlet property="view" destination="iN0-l3-epB" id="c5M-ht-qPF"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,18 +21,39 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Pbd-yb-c2Q">
-                    <rect key="frame" x="24" y="54" width="272" height="490"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jd-5q-e64">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HgI-1S-Xnh">
+                            <rect key="frame" x="24" y="34" width="272" height="490"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adventures Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPL-vg-Vzk">
+                            <rect key="frame" x="24" y="8" width="272" height="26.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstItem="HgI-1S-Xnh" firstAttribute="top" secondItem="1jd-5q-e64" secondAttribute="top" constant="34" id="1Sy-c2-qZl"/>
+                        <constraint firstAttribute="trailing" secondItem="aPL-vg-Vzk" secondAttribute="trailing" constant="24" id="XmF-tA-6yE"/>
+                        <constraint firstItem="aPL-vg-Vzk" firstAttribute="top" secondItem="1jd-5q-e64" secondAttribute="top" constant="8" id="Ymv-CO-3qu"/>
+                        <constraint firstItem="HgI-1S-Xnh" firstAttribute="leading" secondItem="1jd-5q-e64" secondAttribute="leading" constant="24" id="g7K-0n-xYh"/>
+                        <constraint firstItem="aPL-vg-Vzk" firstAttribute="leading" secondItem="1jd-5q-e64" secondAttribute="leading" constant="24" id="gg3-Fw-9aE"/>
+                        <constraint firstAttribute="trailing" secondItem="HgI-1S-Xnh" secondAttribute="trailing" constant="24" id="iQG-UH-3DR"/>
+                        <constraint firstAttribute="bottom" secondItem="HgI-1S-Xnh" secondAttribute="bottom" constant="24" id="kAF-AQ-BJi"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Pbd-yb-c2Q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="3C5-rs-FYi"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Pbd-yb-c2Q" secondAttribute="bottom" constant="24" id="GJE-mN-Itg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pbd-yb-c2Q" secondAttribute="trailing" constant="24" id="niw-il-l2S"/>
-                <constraint firstItem="Pbd-yb-c2Q" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="34" id="vN8-7Y-iy7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1jd-5q-e64" secondAttribute="bottom" id="15b-Ui-oCG"/>
+                <constraint firstItem="1jd-5q-e64" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="W5X-an-qtn"/>
+                <constraint firstItem="1jd-5q-e64" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kU0-Qp-JNq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1jd-5q-e64" secondAttribute="trailing" id="mwr-xc-nbS"/>
             </constraints>
             <point key="canvasLocation" x="138" y="21"/>
         </view>
@@ -38,6 +61,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
