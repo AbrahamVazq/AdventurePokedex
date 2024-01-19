@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllPokemonViewController" customModule="AdventurePokedex" customModuleProvider="target">
             <connections>
-                <outlet property="lblTitle" destination="aPL-vg-Vzk" id="oeP-oH-zlS"/>
                 <outlet property="tblAllPokemon" destination="HgI-1S-Xnh" id="ofK-Jy-Y30"/>
                 <outlet property="view" destination="iN0-l3-epB" id="c5M-ht-qPF"/>
             </connections>
@@ -25,25 +24,16 @@
                     <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HgI-1S-Xnh">
-                            <rect key="frame" x="24" y="34" width="272" height="490"/>
+                            <rect key="frame" x="12" y="12" width="284" height="524"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adventures Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPL-vg-Vzk">
-                            <rect key="frame" x="24" y="8" width="272" height="26.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="HgI-1S-Xnh" firstAttribute="top" secondItem="1jd-5q-e64" secondAttribute="top" constant="34" id="1Sy-c2-qZl"/>
-                        <constraint firstAttribute="trailing" secondItem="aPL-vg-Vzk" secondAttribute="trailing" constant="24" id="XmF-tA-6yE"/>
-                        <constraint firstItem="aPL-vg-Vzk" firstAttribute="top" secondItem="1jd-5q-e64" secondAttribute="top" constant="8" id="Ymv-CO-3qu"/>
-                        <constraint firstItem="HgI-1S-Xnh" firstAttribute="leading" secondItem="1jd-5q-e64" secondAttribute="leading" constant="24" id="g7K-0n-xYh"/>
-                        <constraint firstItem="aPL-vg-Vzk" firstAttribute="leading" secondItem="1jd-5q-e64" secondAttribute="leading" constant="24" id="gg3-Fw-9aE"/>
+                        <constraint firstItem="HgI-1S-Xnh" firstAttribute="top" secondItem="1jd-5q-e64" secondAttribute="top" constant="12" id="1Sy-c2-qZl"/>
+                        <constraint firstItem="HgI-1S-Xnh" firstAttribute="leading" secondItem="1jd-5q-e64" secondAttribute="leading" constant="12" id="g7K-0n-xYh"/>
                         <constraint firstAttribute="trailing" secondItem="HgI-1S-Xnh" secondAttribute="trailing" constant="24" id="iQG-UH-3DR"/>
-                        <constraint firstAttribute="bottom" secondItem="HgI-1S-Xnh" secondAttribute="bottom" constant="24" id="kAF-AQ-BJi"/>
+                        <constraint firstAttribute="bottom" secondItem="HgI-1S-Xnh" secondAttribute="bottom" constant="12" id="kAF-AQ-BJi"/>
                     </constraints>
                 </view>
             </subviews>
@@ -61,9 +51,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

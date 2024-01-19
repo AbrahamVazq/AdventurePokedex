@@ -8,7 +8,6 @@ import UIKit
 class AllPokemonViewController: UIViewController {
     //MARK: - O U T L E T S
     @IBOutlet weak var tblAllPokemon: UITableView!
-    @IBOutlet weak var lblTitle: UILabel!
     
     //MARK: - V A R I A B L E S
     var presenter: AllPokemon_ViewToPresenterProtocol?
@@ -34,14 +33,17 @@ class AllPokemonViewController: UIViewController {
     
     //MARK: - S E T · U P · V I E W
     private func setTableView(){
+        self.title = "Pokemón Adventures"
         self.tblAllPokemon.dataSource = self
+        self.tblAllPokemon.separatorStyle = .none
+        self.tblAllPokemon.showsVerticalScrollIndicator = false
         self.tblAllPokemon.registerCell(type: AllPokemonTableViewCell.self, identifier: AllPokemonTableViewCell.identifier)
     }
     
     private func setUpSearchBar() {
         self.search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
-        search.searchBar.searchTextField.placeholder = "Search your Card"
+        search.searchBar.searchTextField.placeholder = "Pokémon"
         self.navigationItem.searchController = search
         definesPresentationContext = true
     }
@@ -64,8 +66,6 @@ extension AllPokemonViewController: AllPokemon_PresenterToViewProtocol {
         }
     }
     
-    func update(with error: Error) {
-        self.showAlert(andMessage: error.localizedDescription)
-    }
+    func update(with error: Error) { self.showAlert(andMessage: error.localizedDescription) }
     
 }
