@@ -26,6 +26,9 @@ protocol DetailPokemon_ViewToPresenterProtocol: AnyObject {
 	var view: DetailPokemon_PresenterToViewProtocol? { get set }
 	var interactor: DetailPokemon_PresenterToInteractorProtocol? { get set }
 	var router: DetailPokemon_PresenterToRouterProtocol? { get set }
+    
+    func getToSprites(with id:String)
+    
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -49,6 +52,8 @@ protocol DetailPokemon_ViewToPresenterProtocol: AnyObject {
 // MARK: PRESENTER -> INTERACTOR
 protocol DetailPokemon_PresenterToInteractorProtocol: AnyObject {
     var presenter: DetailPokemon_InteractorToPresenterProtocol? { get set }
+    
+    func getToSpritesToInteractor(with id:String)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

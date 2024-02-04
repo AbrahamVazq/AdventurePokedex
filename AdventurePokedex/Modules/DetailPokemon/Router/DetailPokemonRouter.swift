@@ -8,7 +8,7 @@ import UIKit
 
 class DetailPokemonRouter {
 	
-    static func createModule() -> UIViewController {
+    static func createModule(with id: String) -> UIViewController {
         
         let view = DetailPokemonViewController()
         let presenter = DetailPokemonPresenter()
@@ -16,6 +16,7 @@ class DetailPokemonRouter {
         let router = DetailPokemonRouter()
         
         view.presenter = presenter
+        view.idPokemon = id
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router

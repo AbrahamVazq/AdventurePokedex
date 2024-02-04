@@ -6,6 +6,7 @@ import Foundation
 
 enum Paths {
     case getAllPokemon
+    case getSprites(fromId:String)
     //    case path2(param1: <#Type#>)
     //    case path3(param1: <#Type#>, param2: <#Type#>)
     
@@ -13,6 +14,9 @@ enum Paths {
         switch self {
         case .getAllPokemon:
             return "/api/v2/pokedex/1/"
+            
+        case .getSprites(fromId: let id):
+            return "/api/v2/pokemon/\(id)"
             //    case .path2(param1: let variableName):
             //        return "path/param=(variableName)"
             //

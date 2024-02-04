@@ -5,6 +5,13 @@
 import UIKit
 
 //MARK: - UI · T A B L E · V I E W · D E L E G A T E S
+extension AllPokemonViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelect(atIndex: indexPath.row + 1)
+    }
+}
+
+//MARK: - UI · T A B L E · V I E W · D A T A S O U R C E
 extension AllPokemonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return isFiltering ? arrFilterPokemon?.count ?? 0 : arrAllPokemon.count

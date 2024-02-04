@@ -28,6 +28,8 @@ protocol AllPokemon_ViewToPresenterProtocol: AnyObject {
 	var router: AllPokemon_PresenterToRouterProtocol? { get set }
     
     func viewDidLoad()
+    
+    func didSelect(atIndex index: Int)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -115,6 +117,7 @@ protocol AllPokemon_PresenterToViewProtocol: AnyObject {
 
 // MARK: PRESENTER -> ROUTER
 protocol AllPokemon_PresenterToRouterProtocol: AnyObject {
+    func goToDetailPokemon(atIndex index: Int, andView view: AllPokemon_PresenterToViewProtocol)
 }
 
 

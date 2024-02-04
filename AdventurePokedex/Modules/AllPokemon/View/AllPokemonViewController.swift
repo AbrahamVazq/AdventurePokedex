@@ -34,6 +34,7 @@ class AllPokemonViewController: UIViewController {
     //MARK: - S E T · U P · V I E W
     private func setTableView(){
         self.title = "Pokemón Adventures"
+        self.tblAllPokemon.delegate = self
         self.tblAllPokemon.dataSource = self
         self.tblAllPokemon.separatorStyle = .none
         self.tblAllPokemon.showsVerticalScrollIndicator = false

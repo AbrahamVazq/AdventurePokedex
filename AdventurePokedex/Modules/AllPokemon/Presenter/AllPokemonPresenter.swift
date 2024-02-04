@@ -14,6 +14,11 @@ class AllPokemonPresenter: AllPokemon_ViewToPresenterProtocol {
         interactor?.getAllPokemon()
     }
     
+    func didSelect(atIndex index: Int) {
+        if let view = view {
+            router?.goToDetailPokemon(atIndex: index, andView: view)
+        }
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
