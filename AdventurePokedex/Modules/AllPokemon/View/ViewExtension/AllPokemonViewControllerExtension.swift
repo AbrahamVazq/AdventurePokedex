@@ -11,6 +11,7 @@ extension AllPokemonViewController: UITableViewDelegate{
     }
 }
 
+
 //MARK: - UI · T A B L E · V I E W · D A T A S O U R C E
 extension AllPokemonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,9 +27,9 @@ extension AllPokemonViewController: UITableViewDataSource {
     }
 }
 
+
 //MARK: - UI · S E A R C H · R E S U L T
 extension AllPokemonViewController : UISearchResultsUpdating {
-    
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = search.searchBar
         searchPokemon(with: searchBar.text ?? "")

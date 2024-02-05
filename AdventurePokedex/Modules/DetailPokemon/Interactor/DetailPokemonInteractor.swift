@@ -13,12 +13,13 @@ class DetailPokemonInteractor: DetailPokemon_PresenterToInteractorProtocol {
     func getToSpritesToInteractor(with id: String) {
         let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration:
                                                                 PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getSprites(fromId: id).getPath() ))
-        
-        service.launchService {[weak self] (result: Result<AllPokemonResponse, ErrorNetwork> ) in
+        service.launchService {[weak self] (result: Result<SpritesPokemonResponse, ErrorNetwork> ) in
             switch result {
             case .success(let success):
                 print("\n\n\n Succes trae --->>> \(success) \n\n\n")
 //                self?.presenter?.getAllPokemonFromInteractor(withPokemon: success)
+                self?.presenter?.getSpritesFromInteractor(onSprites: success.sprites ?? SpritesResponse())
+
             case .failure(let error):
                 print("\n\n\n ERROR PADRINO --->>> \(error.localizedDescription) \n\n\n")
 //                self?.presenter?.errorFromInteractor(with: error)

@@ -22,6 +22,14 @@ class DetailPokemonViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpCollectionView()
+        self.presenter?.getToSprites(with: idPokemon)
+    }
+    
+    private func setUpCollectionView(){
+        self.cvPokemon.dataSource = self
+        self.cvPokemon.register(PokemonSpriteCollectionViewCell.nib,
+                            forCellWithReuseIdentifier: PokemonSpriteCollectionViewCell.identifier)
     }
     
     //MARK: - W E B · S E R V I C E S
@@ -31,4 +39,11 @@ class DetailPokemonViewController: UIViewController {
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
+    func updateSprites(onSprites arrSprites: SpritesResponse) {
+        self.arrSprites = self.arrSprites.returnSprites(fromSprites: arrSprites)
+        DispatchQueue.main.async {
+            self.cvPokemon.reloadData()
+        }
+    }
+    
 }

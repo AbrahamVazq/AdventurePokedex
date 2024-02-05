@@ -19,5 +19,9 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
 extension DetailPokemonPresenter: DetailPokemon_InteractorToPresenterProtocol {
+    func getSpritesFromInteractor(onSprites arrSprites: SpritesResponse) {
+        view?.updateSprites(onSprites: arrSprites)
+    }
+    
 
 }

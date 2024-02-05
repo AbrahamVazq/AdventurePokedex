@@ -76,6 +76,9 @@ protocol DetailPokemon_PresenterToInteractorProtocol: AnyObject {
 
 // MARK: INTERACTOR -> PRESENTER
 protocol DetailPokemon_InteractorToPresenterProtocol: AnyObject {
+    
+    func getSpritesFromInteractor(onSprites arrSprites: SpritesResponse)
+    
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -93,6 +96,8 @@ protocol DetailPokemon_InteractorToPresenterProtocol: AnyObject {
 // MARK: PRESENTER -> VIEW
 protocol DetailPokemon_PresenterToViewProtocol: AnyObject {
     var presenter: DetailPokemon_ViewToPresenterProtocol? { get set }
+    
+    func updateSprites(onSprites arrSprites: SpritesResponse)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
