@@ -7,6 +7,7 @@ import UIKit
 
 class DetailPokemonViewController: UIViewController {
     //MARK: - O U T L E T S
+    @IBOutlet weak var vwTopContainer: UIView!
     @IBOutlet weak var cvPokemon: UICollectionView!
 
     
