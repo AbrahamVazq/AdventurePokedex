@@ -9,6 +9,9 @@ class DetailPokemonViewController: UIViewController {
     //MARK: - O U T L E T S
     @IBOutlet weak var vwTopContainer: UIView!
     @IBOutlet weak var cvPokemon: UICollectionView!
+    @IBOutlet weak var lblNamePokemon: UILabel!
+    @IBOutlet weak var lblTypePokemon: UILabel!
+    @IBOutlet weak var lblTypesPokemon: UILabel!
 
     
     //MARK: - V A R I A B L E S
