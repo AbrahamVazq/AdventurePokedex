@@ -12,9 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailPokemonViewController" customModule="AdventurePokedex" customModuleProvider="target">
             <connections>
                 <outlet property="cvPokemon" destination="fTt-5w-vSD" id="Siv-Gx-jxl"/>
+                <outlet property="lblHeight" destination="ijY-Yy-FiE" id="eB4-Gh-7A4"/>
                 <outlet property="lblNamePokemon" destination="h9d-cF-Zz4" id="al6-sd-dhx"/>
                 <outlet property="lblTypePokemon" destination="Td6-B5-f8n" id="Iqw-EW-Xvl"/>
                 <outlet property="lblTypesPokemon" destination="LhW-AF-Bd2" id="HoR-rG-m1M"/>
+                <outlet property="lblWeight" destination="pKM-4v-MNj" id="wog-sK-ACV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5E3-GV-9Jd"/>
                 <outlet property="vwTopContainer" destination="Yso-Rp-WEQ" id="Cof-Mt-DEE"/>
             </connections>
@@ -59,6 +61,18 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altura promedio: 0.00 cm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijY-Yy-FiE">
+                            <rect key="frame" x="156" y="115" width="156" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso promedio: 0.00 Kg" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKM-4v-MNj">
+                            <rect key="frame" x="156" y="156.5" width="156" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -66,13 +80,19 @@
                         <constraint firstAttribute="height" constant="184" id="0pg-M2-XBi"/>
                         <constraint firstItem="h9d-cF-Zz4" firstAttribute="top" secondItem="Yso-Rp-WEQ" secondAttribute="top" constant="8" id="9yv-UI-RvZ"/>
                         <constraint firstItem="h9d-cF-Zz4" firstAttribute="leading" secondItem="fTt-5w-vSD" secondAttribute="trailing" constant="8" symbolic="YES" id="A53-gt-uy1"/>
+                        <constraint firstItem="ijY-Yy-FiE" firstAttribute="leading" secondItem="fTt-5w-vSD" secondAttribute="trailing" constant="8" symbolic="YES" id="Ed9-hh-fgu"/>
+                        <constraint firstItem="ijY-Yy-FiE" firstAttribute="top" secondItem="LhW-AF-Bd2" secondAttribute="bottom" constant="8" symbolic="YES" id="Ets-dl-wLp"/>
+                        <constraint firstItem="pKM-4v-MNj" firstAttribute="top" secondItem="ijY-Yy-FiE" secondAttribute="bottom" constant="8" symbolic="YES" id="GAd-4o-mEy"/>
                         <constraint firstItem="Td6-B5-f8n" firstAttribute="top" secondItem="h9d-cF-Zz4" secondAttribute="bottom" constant="8" symbolic="YES" id="HCz-sE-Aug"/>
                         <constraint firstItem="Td6-B5-f8n" firstAttribute="leading" secondItem="fTt-5w-vSD" secondAttribute="trailing" constant="8" symbolic="YES" id="KYJ-fC-Gi7"/>
+                        <constraint firstItem="pKM-4v-MNj" firstAttribute="leading" secondItem="fTt-5w-vSD" secondAttribute="trailing" constant="8" symbolic="YES" id="Oha-Ia-KeR"/>
                         <constraint firstItem="LhW-AF-Bd2" firstAttribute="top" secondItem="Td6-B5-f8n" secondAttribute="bottom" constant="8" symbolic="YES" id="X41-Is-Fp1"/>
                         <constraint firstItem="LhW-AF-Bd2" firstAttribute="leading" secondItem="fTt-5w-vSD" secondAttribute="trailing" constant="8" symbolic="YES" id="mK5-f0-wsE"/>
+                        <constraint firstAttribute="trailing" secondItem="pKM-4v-MNj" secondAttribute="trailing" constant="8" id="oNJ-5c-3Gp"/>
                         <constraint firstItem="fTt-5w-vSD" firstAttribute="top" secondItem="Yso-Rp-WEQ" secondAttribute="top" constant="8" id="vVa-QH-DSc"/>
                         <constraint firstAttribute="trailing" secondItem="LhW-AF-Bd2" secondAttribute="trailing" constant="8" id="vYg-Ie-CRq"/>
                         <constraint firstAttribute="trailing" secondItem="Td6-B5-f8n" secondAttribute="trailing" constant="8" id="vdv-Oj-lI4"/>
+                        <constraint firstAttribute="trailing" secondItem="ijY-Yy-FiE" secondAttribute="trailing" constant="8" id="w51-KA-ME7"/>
                         <constraint firstAttribute="trailing" secondItem="h9d-cF-Zz4" secondAttribute="trailing" constant="8" id="x1J-Ru-bD0"/>
                     </constraints>
                 </view>

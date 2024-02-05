@@ -5,5 +5,9 @@
 import Foundation
 
 struct SpritesPokemonResponse : Codable {
-    let sprites : SpritesResponse?
+    var sprites : SpritesResponse?
+    var id: Int?
+    var weight : Int?
+    var height : Int?
+    var name: String?
 }

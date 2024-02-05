@@ -16,9 +16,7 @@ class DetailPokemonInteractor: DetailPokemon_PresenterToInteractorProtocol {
         service.launchService {[weak self] (result: Result<SpritesPokemonResponse, ErrorNetwork> ) in
             switch result {
             case .success(let success):
-                print("\n\n\n Succes trae --->>> \(success) \n\n\n")
-//                self?.presenter?.getAllPokemonFromInteractor(withPokemon: success)
-                self?.presenter?.getSpritesFromInteractor(onSprites: success.sprites ?? SpritesResponse())
+                self?.presenter?.getPokemonInfoFromInteractor(onPokemon: success)
 
             case .failure(let error):
                 print("\n\n\n ERROR PADRINO --->>> \(error.localizedDescription) \n\n\n")

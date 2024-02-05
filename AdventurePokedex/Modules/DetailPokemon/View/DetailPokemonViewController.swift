@@ -12,8 +12,9 @@ class DetailPokemonViewController: UIViewController {
     @IBOutlet weak var lblNamePokemon: UILabel!
     @IBOutlet weak var lblTypePokemon: UILabel!
     @IBOutlet weak var lblTypesPokemon: UILabel!
+    @IBOutlet weak var lblHeight: UILabel!
+    @IBOutlet weak var lblWeight: UILabel!
 
-    
     //MARK: - V A R I A B L E S
     var idPokemon: String = ""
     var arrSprites: [String] = []
@@ -32,18 +33,18 @@ class DetailPokemonViewController: UIViewController {
                             forCellWithReuseIdentifier: PokemonSpriteCollectionViewCell.identifier)
     }
     
-    //MARK: - W E B · S E R V I C E S
-    
-    
 }
+
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
-    func updateSprites(onSprites arrSprites: SpritesResponse) {
-        self.arrSprites = self.arrSprites.returnSprites(fromSprites: arrSprites)
+    func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse) {
+        self.arrSprites = self.arrSprites.returnSprites(fromSprites: pokemonInfo.sprites ?? SpritesResponse())
         DispatchQueue.main.async {
+            self.lblNamePokemon.text = "#\(pokemonInfo.id ?? 0) \(pokemonInfo.name?.capitalized ?? "")"
+            self.lblHeight.text = String(format: "Altura promedio: %.2f m.", ((pokemonInfo.height?.returnDouble() ?? 0.0) * 0.1) )
+            self.lblWeight.text = String(format: "Angle: %.2f kg", ((pokemonInfo.weight?.returnDouble() ?? 0.0) * 0.1) )
             self.cvPokemon.reloadData()
         }
-    }
-    
+    }    
 }
