@@ -33,6 +33,14 @@ class DetailPokemonViewController: UIViewController {
                             forCellWithReuseIdentifier: PokemonSpriteCollectionViewCell.identifier)
     }
     
+    private func returnTypes(from pokemonInfo: SpritesPokemonResponse) -> String {
+        if pokemonInfo.types.count == 2 {
+            return "\(pokemonInfo.types.first??.type?.name?.translate() ?? "") / \(pokemonInfo.types.last??.type?.name?.translate() ?? "")"
+        }else {
+            return "\(pokemonInfo.types.first??.type?.name?.translate() ?? "")"
+        }
+    }
+    
 }
 
 
@@ -43,7 +51,8 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
         DispatchQueue.main.async {
             self.lblNamePokemon.text = "#\(pokemonInfo.id ?? 0) \(pokemonInfo.name?.capitalized ?? "")"
             self.lblHeight.text = String(format: "Altura promedio: %.2f m.", ((pokemonInfo.height?.returnDouble() ?? 0.0) * 0.1) )
-            self.lblWeight.text = String(format: "Angle: %.2f kg", ((pokemonInfo.weight?.returnDouble() ?? 0.0) * 0.1) )
+            self.lblWeight.text = String(format: "Peso promedio: %.2f kg", ((pokemonInfo.weight?.returnDouble() ?? 0.0) * 0.1) )
+            self.lblTypesPokemon.text = self.returnTypes(from: pokemonInfo)
             self.cvPokemon.reloadData()
         }
     }    

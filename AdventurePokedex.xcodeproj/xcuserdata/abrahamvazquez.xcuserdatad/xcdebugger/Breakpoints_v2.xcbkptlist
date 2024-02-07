@@ -3,4 +3,230 @@
    uuid = "9790A11B-A5ED-434D-9845-A2521EA18686"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCC90AC8-F995-48F6-A42D-F18D8BE9D6F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "getToSpritesToInteractor(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CCC90AC8-F995-48F6-A42D-F18D8BE9D6F2 - 3b4fdb8eef971fb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AdventurePokedex.SpritesPokemonResponse, AdventurePokedex.ErrorNetwork&gt;) -&gt; () in AdventurePokedex.DetailPokemonInteractor.getToSpritesToInteractor(with: Swift.String) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1228">
+               </Location>
+               <Location
+                  uuid = "CCC90AC8-F995-48F6-A42D-F18D8BE9D6F2 - 3b4fdb8eef971fb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AdventurePokedex.SpritesPokemonResponse, AdventurePokedex.ErrorNetwork&gt;) -&gt; () in AdventurePokedex.DetailPokemonInteractor.getToSpritesToInteractor(with: Swift.String) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "1024">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70D6626B-EE0C-42DD-B9E8-59B24354A7E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getToSpritesToInteractor(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70D6626B-EE0C-42DD-B9E8-59B24354A7E3 - 3b4fdb8eef971f5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AdventurePokedex.SpritesPokemonResponse, AdventurePokedex.ErrorNetwork&gt;) -&gt; () in AdventurePokedex.DetailPokemonInteractor.getToSpritesToInteractor(with: Swift.String) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+               <Location
+                  uuid = "70D6626B-EE0C-42DD-B9E8-59B24354A7E3 - 3b4fdb8eef971f5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AdventurePokedex.SpritesPokemonResponse, AdventurePokedex.ErrorNetwork&gt;) -&gt; () in AdventurePokedex.DetailPokemonInteractor.getToSpritesToInteractor(with: Swift.String) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1456">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B8C8EF6-1619-447E-B4AC-294B1D5A397D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getToSpritesToInteractor(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1B8C8EF6-1619-447E-B4AC-294B1D5A397D - 3b4fdb8eef971f5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AdventurePokedex.SpritesPokemonResponse, AdventurePokedex.ErrorNetwork&gt;) -&gt; () in AdventurePokedex.DetailPokemonInteractor.getToSpritesToInteractor(with: Swift.String) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1680">
+               </Location>
+               <Location
+                  uuid = "1B8C8EF6-1619-447E-B4AC-294B1D5A397D - 3b4fdb8eef971f5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;AdventurePokedex.SpritesPokemonResponse, AdventurePokedex.ErrorNetwork&gt;) -&gt; () in AdventurePokedex.DetailPokemonInteractor.getToSpritesToInteractor(with: Swift.String) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/Interactor/DetailPokemonInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1456">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "155D20FC-7005-4636-AD14-152B3538502C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventurePokedex/Services/PokeServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "launchService(withCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AB19611-C173-4861-BA32-3672BE63621D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventurePokedex/Services/PokeServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "launchService(withCompletionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5AB19611-C173-4861-BA32-3672BE63621D - 82f9e6d3ea8235c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventurePokedex.PokeServicesManager.launchService&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(withCompletionHandler: (Swift.Result&lt;&#x3c4;_0_0, AdventurePokedex.ErrorNetwork&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Services/PokeServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "628">
+               </Location>
+               <Location
+                  uuid = "5AB19611-C173-4861-BA32-3672BE63621D - 1ac7d3ac782a71d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in AdventurePokedex.PokeServicesManager.launchService&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(withCompletionHandler: (Swift.Result&lt;&#x3c4;_0_0, AdventurePokedex.ErrorNetwork&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "AdventurePokedex"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Services/PokeServiceManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "580">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA4FC55C-0640-4B1C-AC82-D1C0B0567727"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventurePokedex/Services/PokeServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "launchService(withCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
