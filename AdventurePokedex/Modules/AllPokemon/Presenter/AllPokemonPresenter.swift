@@ -23,6 +23,7 @@ class AllPokemonPresenter: AllPokemon_ViewToPresenterProtocol {
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
 extension AllPokemonPresenter: AllPokemon_InteractorToPresenterProtocol {
+    
     func getAllPokemonFromInteractor(withPokemon pokemon: AllPokemonResponse) {
         view?.updateView(from: pokemon)
     }
@@ -31,5 +32,4 @@ extension AllPokemonPresenter: AllPokemon_InteractorToPresenterProtocol {
         view?.update(with: error)
     }
     
-
 }

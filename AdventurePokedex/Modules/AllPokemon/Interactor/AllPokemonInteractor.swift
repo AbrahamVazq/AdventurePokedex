@@ -1,7 +1,6 @@
 //  AllPokemonInteractor.swift
 //  AdventurePokedex
 //  Created by Abraham Vazquez on 27/11/23.
-//  
 //  ViperTemplate v.0.0.1 - (2023, NS-Bionick Development Team)
 
 import Foundation
@@ -12,7 +11,6 @@ class AllPokemonInteractor: AllPokemon_PresenterToInteractorProtocol {
     private var strHost: String = "pokeapi.co"
     
     func getAllPokemon(){
-        print(type(of: Paths.getAllPokemon.getPath()))
         let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration:
                                                                 PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getAllPokemon.getPath()))
         
@@ -22,7 +20,6 @@ class AllPokemonInteractor: AllPokemon_PresenterToInteractorProtocol {
                 self?.presenter?.getAllPokemonFromInteractor(withPokemon: success)
             case .failure(let error):
                 self?.presenter?.errorFromInteractor(with: error)
-                
             }
         }
     }

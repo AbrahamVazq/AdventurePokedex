@@ -10,7 +10,6 @@ class DetailPokemonViewController: UIViewController {
     @IBOutlet weak var vwTopContainer: UIView!
     @IBOutlet weak var cvPokemon: UICollectionView!
     @IBOutlet weak var lblNamePokemon: UILabel!
-    @IBOutlet weak var lblTypePokemon: UILabel!
     @IBOutlet weak var lblTypesPokemon: UILabel!
     @IBOutlet weak var lblHeight: UILabel!
     @IBOutlet weak var lblWeight: UILabel!
@@ -46,7 +45,7 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse) {
         self.arrSprites = self.arrSprites.returnSprites(fromSprites: pokemonInfo.sprites ?? SpritesResponse())
         DispatchQueue.main.async {
-            self.lblNamePokemon.text = "#\(pokemonInfo.id.nilCoalesced) \(pokemonInfo.name?.capitalized.nilCoalesced ?? "")"
+            self.lblNamePokemon.text = "#\(pokemonInfo.id.nilCoalesced) \(pokemonInfo.name?.capitalized ?? "")"
             self.lblHeight.text = String(format: "Altura promedio: %.2f m.", ((pokemonInfo.height?.returnDouble() ?? 0.0) * 0.1) )
             self.lblWeight.text = String(format: "Peso promedio: %.2f kg", ((pokemonInfo.weight?.returnDouble() ?? 0.0) * 0.1) )
             self.lblTypesPokemon.text = self.returnTypes(from: pokemonInfo)
