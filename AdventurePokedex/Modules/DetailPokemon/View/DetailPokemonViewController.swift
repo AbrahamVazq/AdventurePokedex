@@ -34,11 +34,8 @@ class DetailPokemonViewController: UIViewController {
     }
     
     private func returnTypes(from pokemonInfo: SpritesPokemonResponse) -> String {
-        if pokemonInfo.types.count == 2 {
-            return "\(pokemonInfo.types.first??.type?.name?.translate() ?? "") / \(pokemonInfo.types.last??.type?.name?.translate() ?? "")"
-        }else {
-            return "\(pokemonInfo.types.first??.type?.name?.translate() ?? "")"
-        }
+        guard let types = pokemonInfo.types else { return "" }
+        return "\(types.first?.type?.name?.translate() ?? "") / \(types.count == 2 ? types.last?.type?.name?.translate() ?? "" : "" )"
     }
     
 }
@@ -49,7 +46,7 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse) {
         self.arrSprites = self.arrSprites.returnSprites(fromSprites: pokemonInfo.sprites ?? SpritesResponse())
         DispatchQueue.main.async {
-            self.lblNamePokemon.text = "#\(pokemonInfo.id ?? 0) \(pokemonInfo.name?.capitalized ?? "")"
+            self.lblNamePokemon.text = "#\(pokemonInfo.id.nilCoalesced) \(pokemonInfo.name?.capitalized.nilCoalesced ?? "")"
             self.lblHeight.text = String(format: "Altura promedio: %.2f m.", ((pokemonInfo.height?.returnDouble() ?? 0.0) * 0.1) )
             self.lblWeight.text = String(format: "Peso promedio: %.2f kg", ((pokemonInfo.weight?.returnDouble() ?? 0.0) * 0.1) )
             self.lblTypesPokemon.text = self.returnTypes(from: pokemonInfo)

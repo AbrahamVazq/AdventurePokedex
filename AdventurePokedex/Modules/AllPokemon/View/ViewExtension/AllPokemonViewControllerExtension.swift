@@ -15,7 +15,7 @@ extension AllPokemonViewController: UITableViewDelegate{
 //MARK: - UI · T A B L E · V I E W · D A T A S O U R C E
 extension AllPokemonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isFiltering ? arrFilterPokemon?.count ?? 0 : arrAllPokemon.count
+        return isFiltering ? arrFilterPokemon?.count ?? 0  : arrAllPokemon.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -32,7 +32,7 @@ extension AllPokemonViewController: UITableViewDataSource {
 extension AllPokemonViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = search.searchBar
-        searchPokemon(with: searchBar.text ?? "")
+        searchPokemon(with: searchBar.text.nilCoalesced)
     }
     
     func searchPokemon(with agreement: String) {

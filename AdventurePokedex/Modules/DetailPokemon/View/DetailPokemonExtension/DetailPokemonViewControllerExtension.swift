@@ -11,7 +11,8 @@ extension DetailPokemonViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cCell = collectionView.dequeueReusableCell(withReuseIdentifier: PokemonSpriteCollectionViewCell.identifier, 
-                                                             for: indexPath) as? PokemonSpriteCollectionViewCell else { return PokemonSpriteCollectionViewCell() }
+                                                             for: indexPath) as? PokemonSpriteCollectionViewCell 
+        else { return PokemonSpriteCollectionViewCell() }
         cCell.setupSpriteCell(withImage: arrSprites[indexPath.row])
         return cCell
     }

@@ -10,7 +10,7 @@ struct SpritesPokemonResponse : Codable {
     var weight : Int?
     var height : Int?
     var name: String?
-    var types: [PokemonTypes?]
+    var types: [PokemonTypes]?
 }
 
 struct PokemonTypes: Codable {
