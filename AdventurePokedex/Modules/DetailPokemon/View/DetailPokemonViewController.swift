@@ -13,6 +13,7 @@ class DetailPokemonViewController: UIViewController {
     @IBOutlet weak var lblTypesPokemon: UILabel!
     @IBOutlet weak var lblHeight: UILabel!
     @IBOutlet weak var lblWeight: UILabel!
+    @IBOutlet private weak var vwChainEvol: UIView!
 
     //MARK: - V A R I A B L E S
     var idPokemon: String = ""
@@ -24,6 +25,7 @@ class DetailPokemonViewController: UIViewController {
         super.viewDidLoad()
         self.setUpCollectionView()
         self.presenter?.getToSprites(with: idPokemon)
+        self.addSimpleChain()
     }
     
     private func setUpCollectionView(){
@@ -37,6 +39,22 @@ class DetailPokemonViewController: UIViewController {
         return "\(types.first?.type?.name?.translate() ?? "") / \(types.count == 2 ? types.last?.type?.name?.translate() ?? "" : "" )"
     }
     
+    private func addSimpleChain() {
+        let evolutionView = ChainSimple.instantiate(with: NSObject())
+        self.vwChainEvol.addSubview(evolutionView)
+        vwChainEvol.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [vwChainEvol.leadingAnchor.constraint(equalTo: vwChainEvol.leadingAnchor),
+             vwChainEvol.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
+             vwChainEvol.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
+             vwChainEvol.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
+            ]
+        )
+
+    }
+    
+
+
 }
 
 
