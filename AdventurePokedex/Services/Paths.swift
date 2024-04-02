@@ -7,7 +7,7 @@ import Foundation
 enum Paths {
     case getAllPokemon
     case getSprites(fromId:String)
-    //    case path2(param1: <#Type#>)
+    case getSpecie(fomId:String)
     //    case path3(param1: <#Type#>, param2: <#Type#>)
     
     func getPath() -> String {
@@ -17,13 +17,13 @@ enum Paths {
             
         case .getSprites(fromId: let id):
             return "/api/v2/pokemon/\(id)"
-            //    case .path2(param1: let variableName):
-            //        return "path/param=(variableName)"
-            //
-            //    case .path3(param1: let variableUno, param2: let variableDos):
-            //        return "path/param=\(variableUno),param2=\(variableDos)"
+            
+        case .getSpecie(fomId: let id):
+            return "/api/v2/pokemon-species/\(id)/"
+  
+  //    case .path3(param1: let variableUno, param2: let variableDos):
+  //        return "path/param=\(variableUno),param2=\(variableDos)"
             
         }
     }
-
 }

@@ -17,6 +17,7 @@ class DetailPokemonViewController: UIViewController {
 
     //MARK: - V A R I A B L E S
     var idPokemon: String = ""
+    var idSpecie: String = ""
     var arrSprites: [String] = []
     var presenter: DetailPokemon_ViewToPresenterProtocol?
 
@@ -25,6 +26,7 @@ class DetailPokemonViewController: UIViewController {
         super.viewDidLoad()
         self.setUpCollectionView()
         self.presenter?.getToSprites(with: idPokemon)
+        self.presenter?.getToSpecie(with: idPokemon)
         self.addSimpleChain()
     }
     
@@ -60,6 +62,11 @@ class DetailPokemonViewController: UIViewController {
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
+    func updateInfo(withSpecie specie: SpeciesPokemonResponse) {
+        self.idSpecie = specie.evolution_chain?.url?.returnIDToSpecieChain() ?? ""
+        
+    }
+    
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse) {
         self.arrSprites = self.arrSprites.returnSprites(fromSprites: pokemonInfo.sprites ?? SpritesResponse())
         DispatchQueue.main.async {
@@ -69,5 +76,10 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
             self.lblTypesPokemon.text = self.returnTypes(from: pokemonInfo)
             self.cvPokemon.reloadData()
         }
-    }    
+    }  
+    
+    func updateErrorService(withError error: NSError) {
+        print("\n\n\n type of: ERROR --->>> \( error.localizedDescription) \n\n\n")
+    }
+    
 }

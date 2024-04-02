@@ -28,7 +28,7 @@ protocol DetailPokemon_ViewToPresenterProtocol: AnyObject {
 	var router: DetailPokemon_PresenterToRouterProtocol? { get set }
     
     func getToSprites(with id:String)
-    
+    func getToSpecie(with id:String)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -54,6 +54,8 @@ protocol DetailPokemon_PresenterToInteractorProtocol: AnyObject {
     var presenter: DetailPokemon_InteractorToPresenterProtocol? { get set }
     
     func getToSpritesToInteractor(with id:String)
+    
+    func getToSpecieToInteractor(with id:String)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -78,7 +80,9 @@ protocol DetailPokemon_PresenterToInteractorProtocol: AnyObject {
 protocol DetailPokemon_InteractorToPresenterProtocol: AnyObject {
     
     func getPokemonInfoFromInteractor(onPokemon pokemonInfo: SpritesPokemonResponse)
+    func getSpecieInfoFromInteractor(withSpecie specie: SpeciesPokemonResponse)
     
+    func getErrorFromInteractor(withError error: NSError)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -98,6 +102,9 @@ protocol DetailPokemon_PresenterToViewProtocol: AnyObject {
     var presenter: DetailPokemon_ViewToPresenterProtocol? { get set }
     
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse)
+    func updateInfo(withSpecie specie: SpeciesPokemonResponse)
+    
+    func updateErrorService(withError error: NSError)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
