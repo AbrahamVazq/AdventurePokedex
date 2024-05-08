@@ -28,7 +28,12 @@ class AllPokemonViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.view.activityStartAnimating()
-        presenter?.viewDidLoad()
+        
+        if !(arrAllPokemon.count != 0) {
+            presenter?.viewDidLoad()
+        }else {
+            self.view.activityStopAnimating()
+        }
     }
     
     //MARK: - S E T · U P · V I E W
