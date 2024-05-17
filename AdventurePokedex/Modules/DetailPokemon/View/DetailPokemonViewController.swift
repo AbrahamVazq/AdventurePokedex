@@ -27,7 +27,8 @@ class DetailPokemonViewController: UIViewController {
         self.setUpCollectionView()
         self.presenter?.getToSprites(with: idPokemon)
         self.presenter?.getToSpecie(with: idPokemon)
-        self.addSimpleChain()
+        self.addSimpleChain(withState: true)
+//        self.addCompleteChain()
     }
     
     private func setUpCollectionView(){
@@ -41,8 +42,8 @@ class DetailPokemonViewController: UIViewController {
         return "\(types.first?.type?.name?.translate() ?? "") / \(types.count == 2 ? types.last?.type?.name?.translate() ?? "" : "" )"
     }
     
-    private func addSimpleChain() {
-        let evolutionView = ChainSimple.instantiate(with: NSObject())
+    private func addSimpleChain(withState state: Bool = false) {
+        let evolutionView = state ?  ChainDouble.instantiate(with: NSObject()) : ChainSimple.instantiate(with: NSObject())
         self.vwChainEvol.addSubview(evolutionView)
         vwChainEvol.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
@@ -52,11 +53,7 @@ class DetailPokemonViewController: UIViewController {
              vwChainEvol.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
             ]
         )
-
     }
-    
-
-
 }
 
 

@@ -17,9 +17,7 @@ extension String {
         var aux = ""
         var arrAux: [String] = []
         arrAux.append(contentsOf: self.components(separatedBy: "chain" ))
-        print("\n\n\n arrAux --->>> \(arrAux) \n\n\n")
         aux = arrAux.count == 2 ? arrAux[1] : "noTengoNada"
-        print("\n\n\n aux --->>> \(aux) \n\n\n")
         aux = aux.replacingOccurrences(of: "/", with: "")
         return aux
     }

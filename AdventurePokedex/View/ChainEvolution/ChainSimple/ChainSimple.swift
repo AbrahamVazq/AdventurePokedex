@@ -11,11 +11,9 @@ class ChainSimple: UIView {
     @IBOutlet private weak var lblNamePokemon: UILabel!
     @IBOutlet private weak var imgPokemon: UIImageView!
     
-    
     override func awakeFromNib() { }
     
     class func instantiate(with obj: NSObject) -> ChainSimple {
-
         if let nib = Bundle.main.loadNibNamed(ChainSimple.identifier,  owner: self, options: nil)?[0] as? ChainSimple {
             return nib
         }

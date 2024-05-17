@@ -57,6 +57,8 @@
 		A47E94372B7096E70049E311 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E94362B7096E70049E311 /* Array+Extension.swift */; };
 		A47E943A2B70AF600049E311 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E94392B70AF600049E311 /* Int+Extension.swift */; };
 		A47E943D2B70AFCA0049E311 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E943C2B70AFCA0049E311 /* Double+Extension.swift */; };
+		A49CB1002BEB493F00F4293E /* ChainDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49CB0FF2BEB493F00F4293E /* ChainDouble.swift */; };
+		A49CB1022BEB495500F4293E /* ChainDouble.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49CB1012BEB495500F4293E /* ChainDouble.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		A47E94362B7096E70049E311 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		A47E94392B70AF600049E311 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		A47E943C2B70AFCA0049E311 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		A49CB0FF2BEB493F00F4293E /* ChainDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainDouble.swift; sourceTree = "<group>"; };
+		A49CB1012BEB495500F4293E /* ChainDouble.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChainDouble.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				A431810A2B7AC39500E2C65E /* ChainSimple */,
-				A431810B2B7AC3A800E2C65E /* ChainComplete */,
+				A431810B2B7AC3A800E2C65E /* ChainDouble */,
 			);
 			path = ChainEvolution;
 			sourceTree = "<group>";
@@ -287,11 +291,13 @@
 			path = ChainSimple;
 			sourceTree = "<group>";
 		};
-		A431810B2B7AC3A800E2C65E /* ChainComplete */ = {
+		A431810B2B7AC3A800E2C65E /* ChainDouble */ = {
 			isa = PBXGroup;
 			children = (
+				A49CB0FF2BEB493F00F4293E /* ChainDouble.swift */,
+				A49CB1012BEB495500F4293E /* ChainDouble.xib */,
 			);
-			path = ChainComplete;
+			path = ChainDouble;
 			sourceTree = "<group>";
 		};
 		A43181122B7AD23500E2C65E /* SpeciesPokemonResponse */ = {
@@ -601,6 +607,7 @@
 				A43FD1772B15BBAC007ADE79 /* AllPokemonTableViewCell.xib in Resources */,
 				A47E942F2B702A560049E311 /* DetailPokemonViewController.xib in Resources */,
 				A431810F2B7AC3FF00E2C65E /* ChainSimple.xib in Resources */,
+				A49CB1022BEB495500F4293E /* ChainDouble.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +620,7 @@
 			files = (
 				A43181162B7AD60100E2C65E /* ViewController.swift in Sources */,
 				A43013EC2B5A400C00CFDD85 /* DetailPokemonViewControllerExtension.swift in Sources */,
+				A49CB1002BEB493F00F4293E /* ChainDouble.swift in Sources */,
 				A43FD1AF2B15CBE1007ADE79 /* AllPokemonSpecies.swift in Sources */,
 				A43FD1A62B15CAD8007ADE79 /* AllPokemonNames.swift in Sources */,
 				A47E94372B7096E70049E311 /* Array+Extension.swift in Sources */,
