@@ -22,13 +22,11 @@ class DetailPokemonViewController: UIViewController {
     var presenter: DetailPokemon_ViewToPresenterProtocol?
 
     // MARK: Lifecycle
-    override func viewDidLoad() {
+    override func viewDidLoad() { 
         super.viewDidLoad()
         self.setUpCollectionView()
-        self.presenter?.getToSprites(with: idPokemon)
         self.presenter?.getToSpecie(with: idPokemon)
-        self.addSimpleChain(withState: true)
-//        self.addCompleteChain()
+        self.presenter?.getToSprites(with: idPokemon)
     }
     
     private func setUpCollectionView(){
@@ -39,7 +37,7 @@ class DetailPokemonViewController: UIViewController {
     
     private func returnTypes(from pokemonInfo: SpritesPokemonResponse) -> String {
         guard let types = pokemonInfo.types else { return "" }
-        return "\(types.first?.type?.name?.translate() ?? "") / \(types.count == 2 ? types.last?.type?.name?.translate() ?? "" : "" )"
+        return "\(types.first?.type?.name?.translate() ?? "") \(types.count == 2 ? "/ \(types.last?.type?.name?.translate() ?? "" )" : "" )"
     }
     
     private func addSimpleChain(withState state: Bool = false) {
@@ -54,14 +52,18 @@ class DetailPokemonViewController: UIViewController {
             ]
         )
     }
+    
+    private func updateChainEvolution(withIDSpecie id: String) {
+        self.presenter?.getToChainEvol(with: id)
+    }
 }
 
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
+    
     func updateInfo(withSpecie specie: SpeciesPokemonResponse) {
         self.idSpecie = specie.evolution_chain?.url?.returnIDToSpecieChain() ?? ""
-        
     }
     
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse) {
@@ -74,6 +76,10 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
             self.cvPokemon.reloadData()
         }
     }  
+    
+    func updateInfo(withChain chain: ChainEvolutionResponse) {
+        print("\n\n\n chain --->>> \(chain) \n\n\n")
+    }
     
     func updateErrorService(withError error: NSError) {
         print("\n\n\n type of: ERROR --->>> \( error.localizedDescription) \n\n\n")

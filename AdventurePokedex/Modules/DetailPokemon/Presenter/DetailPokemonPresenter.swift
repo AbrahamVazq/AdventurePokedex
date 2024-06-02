@@ -19,6 +19,9 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         interactor?.getToSpecieToInteractor(with: id)
     }
     
+    func getToChainEvol(with id: String) {
+        interactor?.getToChainEvolToInteracto(with: id)
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
@@ -29,6 +32,10 @@ extension DetailPokemonPresenter: DetailPokemon_InteractorToPresenterProtocol {
     
     func getPokemonInfoFromInteractor(onPokemon pokemonInfo: SpritesPokemonResponse) {
         view?.updateInfo(onPokemon: pokemonInfo)
+    }
+    
+    func getChainEvolInfoFromInteractor(withChain chain: ChainEvolutionResponse) {
+        
     }
     
     func getErrorFromInteractor(withError error: NSError) {

@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct Json4Swift_Base : Codable {
+struct ChainEvolutionResponse : Codable {
     var baby_trigger_item : String?
     var chain : ChainResponse?
     var id : Int?
@@ -14,9 +14,8 @@ struct ChainResponse : Codable {
     var evolution_details : [String]?
     var evolves_to : [Evolves_to]?
     var is_baby : Bool?
-//    var species : Species? 
+    var species : Species?
 }
-
 
 struct Evolves_to : Codable {
     var evolution_details : [Evolution_details]?
@@ -25,26 +24,31 @@ struct Evolves_to : Codable {
 }
 
 struct Evolution_details : Codable {
-    let gender : String?
-    let held_item : String?
-    let item : Item?
-    let known_move : String?
-    let known_move_type : String?
-    let location : String?
-    let min_affection : String?
-    let min_beauty : String?
-    let min_happiness : String?
-    let min_level : String?
-    let needs_overworld_rain : Bool?
-    let party_species : String?
-    let party_type : String?
-    let relative_physical_stats : String?
-    let time_of_day : String?
-    let trade_species : String?
-    let turn_upside_down : Bool?
+    var gender : String?
+    var held_item : String?
+    var item : Item?
+    var known_move : String?
+    var known_move_type : String?
+    var location : String?
+    var min_affection : String?
+    var min_beauty : String?
+    var min_happiness : String?
+    var min_level : String?
+    var needs_overworld_rain : Bool?
+    var party_species : String?
+    var party_type : String?
+    var relative_physical_stats : String?
+    var time_of_day : String?
+    var trade_species : String?
+    var turn_upside_down : Bool?
 }
 
 struct Item : Codable {
-    let name : String?
-    let url : String?
+    var name : String?
+    var url : String?
+}
+
+struct Species : Codable {
+    var name: String?
+    var url: String?
 }

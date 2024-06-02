@@ -27,6 +27,7 @@ class DetailPokemonInteractor: DetailPokemon_PresenterToInteractorProtocol {
         let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod,
                                                                                                      strHost: strHost,
                                                                                                      path: Paths.getSpecie(fomId: id).getPath()))
+        print("\n\n\n service --->>> \(service.urlConfiguration.path.strPathToUse) \n\n\n")
         service.launchService { [weak self] (result: Result<SpeciesPokemonResponse, ErrorNetwork>) in
             switch result {
             case .success(let success):
@@ -35,6 +36,22 @@ class DetailPokemonInteractor: DetailPokemon_PresenterToInteractorProtocol {
                 self?.presenter?.getErrorFromInteractor(withError: error as NSError)
             }
             
+        }
+    }
+    
+    func getToChainEvolToInteracto(with id: String) {
+        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod,
+                                                                                                     strHost: strHost,
+                                                                                                     path: Paths.getChainEvolution(fromId: id).getPath()))
+        print("\n\n\n service --->>> \(service.urlConfiguration.path.strPathToUse) \n\n\n")
+        service.launchService { [weak self] (result: Result<ChainEvolutionResponse, ErrorNetwork>) in
+            switch result {
+            case .success(let success):
+                print("\n\n\n success --->>> \(success) \n\n\n")
+                //                self?.presenter?.getSpecieInfoFromInteractor(withSpecie: success)
+            case .failure(let error):
+                self?.presenter?.getErrorFromInteractor(withError: error as NSError)
+            }
         }
     }
 }
