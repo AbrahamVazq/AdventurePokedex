@@ -45,11 +45,6 @@
 		A43FD1972B15C5D9007ADE79 /* ErrorNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1962B15C5D9007ADE79 /* ErrorNetwork.swift */; };
 		A43FD1992B15C7AA007ADE79 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1982B15C7AA007ADE79 /* Paths.swift */; };
 		A43FD19E2B15C91E007ADE79 /* AllPokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD19D2B15C91E007ADE79 /* AllPokemonResponse.swift */; };
-		A43FD1A22B15CA51007ADE79 /* AllPokemonDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1A12B15CA51007ADE79 /* AllPokemonDescriptions.swift */; };
-		A43FD1A42B15CAA2007ADE79 /* AllPokemonLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1A32B15CAA2007ADE79 /* AllPokemonLanguage.swift */; };
-		A43FD1A62B15CAD8007ADE79 /* AllPokemonNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1A52B15CAD8007ADE79 /* AllPokemonNames.swift */; };
-		A43FD1AC2B15CBBD007ADE79 /* AllPokemonEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1AB2B15CBBD007ADE79 /* AllPokemonEntries.swift */; };
-		A43FD1AF2B15CBE1007ADE79 /* AllPokemonSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1AE2B15CBE1007ADE79 /* AllPokemonSpecies.swift */; };
 		A43FD1B22B15D2A7007ADE79 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1B12B15D2A7007ADE79 /* UIViewController+Extension.swift */; };
 		A47E942F2B702A560049E311 /* DetailPokemonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47E942E2B702A560049E311 /* DetailPokemonViewController.xib */; };
 		A47E94322B7087AD0049E311 /* SpritesPokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E94312B7087AD0049E311 /* SpritesPokemonResponse.swift */; };
@@ -102,11 +97,6 @@
 		A43FD1962B15C5D9007ADE79 /* ErrorNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorNetwork.swift; sourceTree = "<group>"; };
 		A43FD1982B15C7AA007ADE79 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		A43FD19D2B15C91E007ADE79 /* AllPokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonResponse.swift; sourceTree = "<group>"; };
-		A43FD1A12B15CA51007ADE79 /* AllPokemonDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonDescriptions.swift; sourceTree = "<group>"; };
-		A43FD1A32B15CAA2007ADE79 /* AllPokemonLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonLanguage.swift; sourceTree = "<group>"; };
-		A43FD1A52B15CAD8007ADE79 /* AllPokemonNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonNames.swift; sourceTree = "<group>"; };
-		A43FD1AB2B15CBBD007ADE79 /* AllPokemonEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonEntries.swift; sourceTree = "<group>"; };
-		A43FD1AE2B15CBE1007ADE79 /* AllPokemonSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonSpecies.swift; sourceTree = "<group>"; };
 		A43FD1B12B15D2A7007ADE79 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A47E942E2B702A560049E311 /* DetailPokemonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPokemonViewController.xib; sourceTree = "<group>"; };
 		A47E94312B7087AD0049E311 /* SpritesPokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpritesPokemonResponse.swift; sourceTree = "<group>"; };
@@ -491,11 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				A43FD19D2B15C91E007ADE79 /* AllPokemonResponse.swift */,
-				A43FD1A12B15CA51007ADE79 /* AllPokemonDescriptions.swift */,
-				A43FD1A32B15CAA2007ADE79 /* AllPokemonLanguage.swift */,
-				A43FD1A52B15CAD8007ADE79 /* AllPokemonNames.swift */,
-				A43FD1AB2B15CBBD007ADE79 /* AllPokemonEntries.swift */,
-				A43FD1AE2B15CBE1007ADE79 /* AllPokemonSpecies.swift */,
 			);
 			path = AllPokemonResponse;
 			sourceTree = "<group>";
@@ -621,10 +606,7 @@
 				A43181162B7AD60100E2C65E /* ViewController.swift in Sources */,
 				A43013EC2B5A400C00CFDD85 /* DetailPokemonViewControllerExtension.swift in Sources */,
 				A49CB1002BEB493F00F4293E /* ChainDouble.swift in Sources */,
-				A43FD1AF2B15CBE1007ADE79 /* AllPokemonSpecies.swift in Sources */,
-				A43FD1A62B15CAD8007ADE79 /* AllPokemonNames.swift in Sources */,
 				A47E94372B7096E70049E311 /* Array+Extension.swift in Sources */,
-				A43FD1AC2B15CBBD007ADE79 /* AllPokemonEntries.swift in Sources */,
 				A43013DA2B5A382D00CFDD85 /* DetailPokemonViewController.swift in Sources */,
 				A43FD1802B15BD0B007ADE79 /* AllPokemonViewControllerExtension.swift in Sources */,
 				A47E943A2B70AF600049E311 /* Int+Extension.swift in Sources */,
@@ -645,7 +627,6 @@
 				A43FD16B2B15B903007ADE79 /* AllPokemonRouter.swift in Sources */,
 				A43FD19E2B15C91E007ADE79 /* AllPokemonResponse.swift in Sources */,
 				A43FD1872B15BF56007ADE79 /* TableView+Extension.swift in Sources */,
-				A43FD1A22B15CA51007ADE79 /* AllPokemonDescriptions.swift in Sources */,
 				A43181082B7AAFCF00E2C65E /* Optional+Extension.swift in Sources */,
 				A43013D82B5A382D00CFDD85 /* DetailPokemonPresenter.swift in Sources */,
 				A43FD1762B15BBAC007ADE79 /* AllPokemonTableViewCell.swift in Sources */,
@@ -653,7 +634,6 @@
 				A43013E82B5A3BAC00CFDD85 /* PokemonSpriteCollectionViewCell.swift in Sources */,
 				A43FD16A2B15B903007ADE79 /* AllPokemonPresenter.swift in Sources */,
 				A47E943D2B70AFCA0049E311 /* Double+Extension.swift in Sources */,
-				A43FD1A42B15CAA2007ADE79 /* AllPokemonLanguage.swift in Sources */,
 				A405FC9A2B158AB50088D8FA /* SceneDelegate.swift in Sources */,
 				A43FD16D2B15B903007ADE79 /* AllPokemonProtocols.swift in Sources */,
 				A43181142B7AD25300E2C65E /* SpeciesPokemonResponse.swift in Sources */,

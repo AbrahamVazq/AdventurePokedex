@@ -26,3 +26,30 @@ struct AllPokemonResponse : Codable {
     }
 
 }
+
+struct AllPokemonDescriptions : Codable {
+    var description : String?
+    var language : AllPokemonLanguage?
+}
+
+struct AllPokemonLanguage : Codable {
+    var name : String?
+    var url : String?
+}
+
+
+struct AllPokemonNames : Codable {
+    var language : AllPokemonLanguage?
+    var name : String?
+}
+
+struct AllPokemonEntries : Codable {
+    var entry_number : Int?
+    var pokemon_species : AllPokemonSpecies?
+}
+
+
+struct AllPokemonSpecies : Codable {
+    var name : String?
+    var url : String?
+}
