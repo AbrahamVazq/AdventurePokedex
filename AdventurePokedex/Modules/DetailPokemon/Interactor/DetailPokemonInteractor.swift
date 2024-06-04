@@ -27,7 +27,6 @@ class DetailPokemonInteractor: DetailPokemon_PresenterToInteractorProtocol {
         let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod,
                                                                                                      strHost: strHost,
                                                                                                      path: Paths.getChainEvolution(fromId: id).getPath()))
-        print("\n\n\n service --->>> \(service.urlConfiguration.path.strPathToUse) \n\n\n")
         service.launchService { [weak self] (result: Result<ChainEvolutionResponse, ErrorNetwork>) in
             switch result {
             case .success(let success):

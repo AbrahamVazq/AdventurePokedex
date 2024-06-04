@@ -17,7 +17,7 @@ enum Paths {
             return "/api/v2/pokedex/1/"
             
         case .getSprites(fromId: let id):
-            return "/api/v2/pokemon/\(id)"
+            return "/api/v2/pokemon/\(id)/"
             
         case .getSpecie(fomId: let id):
             return "/api/v2/pokemon-species/\(id)/"

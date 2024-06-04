@@ -5,9 +5,13 @@
 import Foundation
 
 struct ChainEvolutionResponse : Codable {
-    var baby_trigger_item : String?
+    var babyTriggerItem : String?
     var chain : ChainResponse?
     var id : Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case babyTriggerItem = "baby_trigger_item"
+    }
 }
 
 struct ChainResponse : Codable {

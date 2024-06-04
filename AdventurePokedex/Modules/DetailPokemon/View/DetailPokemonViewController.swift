@@ -25,9 +25,8 @@ class DetailPokemonViewController: UIViewController {
     override func viewDidLoad() { 
         super.viewDidLoad()
         self.setUpCollectionView()
-        print("\n\n\n self.idPokemon --->>> \(self.idPokemon) \n\n\n")
-        print("\n\n\n self.idSpecie --->>> \(self.idSpecie) \n\n\n")
         self.presenter?.getToSprites(with: idPokemon)
+        self.updateChainEvolution(withIDSpecie: self.idSpecie)
     }
     
     private func setUpCollectionView(){
