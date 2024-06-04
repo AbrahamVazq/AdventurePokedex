@@ -25,9 +25,9 @@ class AllPokemonRouter {
 }
 
 extension AllPokemonRouter: AllPokemon_PresenterToRouterProtocol {
-    func goToDetailPokemon(atIndex index: Int, andView view: AllPokemon_PresenterToViewProtocol) {
+    func goToDetailPokemon(atIndex index: Int, idSpecie: String, andView view: AllPokemon_PresenterToViewProtocol) {
         if let view = view as? AllPokemonViewController {
-            let vc = DetailPokemonRouter.createModule(with: "\(index)")
+            let vc = DetailPokemonRouter.createModule(with: "\(index)", andIdSpecie: idSpecie)
             view.navigationController?.pushViewController(vc, animated: true)
         }
     }

@@ -76,7 +76,7 @@ extension AllPokemonViewController: AllPokemon_PresenterToViewProtocol {
         self.idSpecie = specie.evolution_chain?.url?.returnIDToSpecieChain() ?? ""
         DispatchQueue.main.async {
             if self.idSpecie != "" {
-                self.presenter?.didSelect(atIndex: self.idPokemon)
+                self.presenter?.didSelect(atIndex: self.idPokemon, andIdSpecie: self.idSpecie)
             }
         }
     }

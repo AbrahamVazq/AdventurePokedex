@@ -18,9 +18,9 @@ class AllPokemonPresenter: AllPokemon_ViewToPresenterProtocol {
         interactor?.getToSpecieToInteractor(with: id)
     }
     
-    func didSelect(atIndex index: Int) {
+    func didSelect(atIndex index: Int, andIdSpecie specie: String) {
         if let view = view {
-            router?.goToDetailPokemon(atIndex: index, andView: view)
+            router?.goToDetailPokemon(atIndex: index, idSpecie: specie, andView: view)
         }
     }
 }

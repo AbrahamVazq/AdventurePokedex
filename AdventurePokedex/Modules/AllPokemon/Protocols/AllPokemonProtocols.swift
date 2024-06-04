@@ -29,7 +29,7 @@ protocol AllPokemon_ViewToPresenterProtocol: AnyObject {
     
     func viewDidLoad()
     func getToSpecie(with id:String)
-    func didSelect(atIndex index: Int)
+    func didSelect(atIndex index: Int, andIdSpecie specie: String)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -120,7 +120,7 @@ protocol AllPokemon_PresenterToViewProtocol: AnyObject {
 
 // MARK: PRESENTER -> ROUTER
 protocol AllPokemon_PresenterToRouterProtocol: AnyObject {
-    func goToDetailPokemon(atIndex index: Int, andView view: AllPokemon_PresenterToViewProtocol)
+    func goToDetailPokemon(atIndex index: Int, idSpecie: String, andView view: AllPokemon_PresenterToViewProtocol)
 }
 
 
