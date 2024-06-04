@@ -7,8 +7,8 @@ import UIKit
 //MARK: - UI · T A B L E · V I E W · D E L E G A T E S
 extension AllPokemonViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.idPokemon = indexPath.row + 1
-        self.presenter?.getToSpecie(with: "\(indexPath.row + 1)")
+        self.idPokemon = self.isFiltering ? arrFilterPokemon?[indexPath.row].entry_number ?? 0  : arrAllPokemon[indexPath.row].entry_number ?? 0
+        self.presenter?.getToSpecie(with: "\(idPokemon)")
     }
 }
 
