@@ -28,7 +28,6 @@ protocol DetailPokemon_ViewToPresenterProtocol: AnyObject {
 	var router: DetailPokemon_PresenterToRouterProtocol? { get set }
     
     func getToSprites(with id:String)
-    func getToSpecie(with id:String)
     func getToChainEvol(with id:String)
 }
 
@@ -55,7 +54,6 @@ protocol DetailPokemon_PresenterToInteractorProtocol: AnyObject {
     var presenter: DetailPokemon_InteractorToPresenterProtocol? { get set }
     
     func getToSpritesToInteractor(with id:String)
-    func getToSpecieToInteractor(with id:String)
     func getToChainEvolToInteracto(with id:String)
 }
 
@@ -81,7 +79,6 @@ protocol DetailPokemon_PresenterToInteractorProtocol: AnyObject {
 protocol DetailPokemon_InteractorToPresenterProtocol: AnyObject {
     
     func getPokemonInfoFromInteractor(onPokemon pokemonInfo: SpritesPokemonResponse)
-    func getSpecieInfoFromInteractor(withSpecie specie: SpeciesPokemonResponse)
     func getChainEvolInfoFromInteractor(withChain chain: ChainEvolutionResponse)
     
     func getErrorFromInteractor(withError error: NSError)
@@ -104,7 +101,6 @@ protocol DetailPokemon_PresenterToViewProtocol: AnyObject {
     var presenter: DetailPokemon_ViewToPresenterProtocol? { get set }
     
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse)
-    func updateInfo(withSpecie specie: SpeciesPokemonResponse)
     func updateInfo(withChain chain: ChainEvolutionResponse)
     
     func updateErrorService(withError error: NSError)

@@ -25,7 +25,6 @@ class DetailPokemonViewController: UIViewController {
     override func viewDidLoad() { 
         super.viewDidLoad()
         self.setUpCollectionView()
-        self.presenter?.getToSpecie(with: idPokemon)
         self.presenter?.getToSprites(with: idPokemon)
     }
     
@@ -62,10 +61,6 @@ class DetailPokemonViewController: UIViewController {
 // MARK: - P R E S E N T E R · T O · V I E W
 extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
     
-    func updateInfo(withSpecie specie: SpeciesPokemonResponse) {
-        self.idSpecie = specie.evolution_chain?.url?.returnIDToSpecieChain() ?? ""
-    }
-    
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse) {
         self.arrSprites = self.arrSprites.returnSprites(fromSprites: pokemonInfo.sprites ?? SpritesResponse())
         DispatchQueue.main.async {
@@ -84,5 +79,4 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
     func updateErrorService(withError error: NSError) {
         print("\n\n\n type of: ERROR --->>> \( error.localizedDescription) \n\n\n")
     }
-    
 }

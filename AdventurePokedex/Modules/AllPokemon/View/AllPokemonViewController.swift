@@ -16,7 +16,9 @@ class AllPokemonViewController: UIViewController {
     var isFiltering : Bool {return search.isActive && !isSearchEmpty}
     var arrAllPokemon: [AllPokemonEntries] = []
     var arrFilterPokemon: [AllPokemonEntries]?
-
+    var idSpecie: String = ""
+    var idPokemon: Int = 0
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +33,7 @@ class AllPokemonViewController: UIViewController {
         
         if !(arrAllPokemon.count != 0) {
             presenter?.viewDidLoad()
-        }else {
-            self.view.activityStopAnimating()
-        }
+        }else { self.view.activityStopAnimating() }
     }
     
     //MARK: - S E T · U P · V I E W
@@ -72,6 +72,14 @@ extension AllPokemonViewController: AllPokemon_PresenterToViewProtocol {
         }
     }
     
-    func update(with error: Error) { self.showAlert(andMessage: error.localizedDescription) }
+    func updateInfo(withSpecie specie: SpeciesPokemonResponse) {
+        self.idSpecie = specie.evolution_chain?.url?.returnIDToSpecieChain() ?? ""
+        DispatchQueue.main.async {
+            if self.idSpecie != "" {
+                self.presenter?.didSelect(atIndex: self.idPokemon)
+            }
+        }
+    }
     
+    func update(with error: Error) { self.showAlert(andMessage: error.localizedDescription) }
 }

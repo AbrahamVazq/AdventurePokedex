@@ -23,4 +23,18 @@ class AllPokemonInteractor: AllPokemon_PresenterToInteractorProtocol {
             }
         }
     }
+    
+    func getToSpecieToInteractor(with id: String) {
+        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod,
+                                                                                                     strHost: strHost,
+                                                                                                     path: Paths.getSpecie(fomId: id).getPath()))
+        service.launchService { [weak self] (result: Result<SpeciesPokemonResponse, ErrorNetwork>) in
+            switch result {
+            case .success(let success):
+                self?.presenter?.getSpecieInfoFromInteractor(withSpecie: success)
+            case .failure(let error):
+                self?.presenter?.errorFromInteractor(with: error)
+            }
+        }
+    }
 }

@@ -28,7 +28,7 @@ protocol AllPokemon_ViewToPresenterProtocol: AnyObject {
 	var router: AllPokemon_PresenterToRouterProtocol? { get set }
     
     func viewDidLoad()
-    
+    func getToSpecie(with id:String)
     func didSelect(atIndex index: Int)
 }
 
@@ -55,7 +55,7 @@ protocol AllPokemon_PresenterToInteractorProtocol: AnyObject {
     var presenter: AllPokemon_InteractorToPresenterProtocol? { get set }
     
     func getAllPokemon()
-    
+    func getToSpecieToInteractor(with id:String)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -80,8 +80,9 @@ protocol AllPokemon_PresenterToInteractorProtocol: AnyObject {
 protocol AllPokemon_InteractorToPresenterProtocol: AnyObject {
     
     func getAllPokemonFromInteractor(withPokemon pokemon: AllPokemonResponse)
-    func errorFromInteractor(with error: Error)
+    func getSpecieInfoFromInteractor(withSpecie specie: SpeciesPokemonResponse)
     
+    func errorFromInteractor(with error: Error)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -101,6 +102,8 @@ protocol AllPokemon_PresenterToViewProtocol: AnyObject {
     var presenter: AllPokemon_ViewToPresenterProtocol? { get set }
     
     func updateView(from pokemon: AllPokemonResponse)
+    func updateInfo(withSpecie specie: SpeciesPokemonResponse)
+    
     func update(with error: Error)
 }
 

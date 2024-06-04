@@ -14,6 +14,10 @@ class AllPokemonPresenter: AllPokemon_ViewToPresenterProtocol {
         interactor?.getAllPokemon()
     }
     
+    func getToSpecie(with id: String) {
+        interactor?.getToSpecieToInteractor(with: id)
+    }
+    
     func didSelect(atIndex index: Int) {
         if let view = view {
             router?.goToDetailPokemon(atIndex: index, andView: view)
@@ -26,6 +30,10 @@ extension AllPokemonPresenter: AllPokemon_InteractorToPresenterProtocol {
     
     func getAllPokemonFromInteractor(withPokemon pokemon: AllPokemonResponse) {
         view?.updateView(from: pokemon)
+    }
+    
+    func getSpecieInfoFromInteractor(withSpecie specie: SpeciesPokemonResponse) {
+        view?.updateInfo(withSpecie: specie)
     }
     
     func errorFromInteractor(with error: Error) {
