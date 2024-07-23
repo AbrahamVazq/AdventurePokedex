@@ -11,9 +11,7 @@ class AllPokemonInteractor: AllPokemon_PresenterToInteractorProtocol {
     private var strHost: String = "pokeapi.co"
     
     func getAllPokemon(){
-        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration:
-                                                                PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getAllPokemon.getPath()))
-        
+        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getAllPokemon.getPath()))
         service.launchService {[weak self] (result: Result<AllPokemonResponse, ErrorNetwork> ) in
             switch result {
             case .success(let success):
@@ -25,9 +23,7 @@ class AllPokemonInteractor: AllPokemon_PresenterToInteractorProtocol {
     }
     
     func getToSpecieToInteractor(with id: String) {
-        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod,
-                                                                                                     strHost: strHost,
-                                                                                                     path: Paths.getSpecie(fomId: id).getPath()))
+        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getSpecie(fomId: id).getPath()))
         service.launchService { [weak self] (result: Result<SpeciesPokemonResponse, ErrorNetwork>) in
             switch result {
             case .success(let success):

@@ -27,9 +27,9 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         print("\n\n Chain.chain.evolvesTo.first.evolves_to.count --->>> \(chain.chain?.evolves_to?.first?.evolves_to?.count ?? 0) \n")
         print("\n\n Chain.chain.evolvesTo.first.evolves_to.first --->>> \(chain.chain?.evolves_to?.first?.evolves_to?.first ?? Evolves_to()) \n")
         
-        let firstStep: SpeciesAndTriggerEvol = chain.chain?.species ?? SpeciesAndTriggerEvol()
-        let secondStep: SpeciesAndTriggerEvol = chain.chain?.evolves_to?.first?.species ?? SpeciesAndTriggerEvol()
-        let thirdStep: SpeciesAndTriggerEvol = chain.chain?.evolves_to?.first?.evolves_to?.first?.species ?? SpeciesAndTriggerEvol()
+        let firstStep: ChainDataComplement = chain.chain?.species ?? ChainDataComplement()
+        let secondStep: ChainDataComplement = chain.chain?.evolves_to?.first?.species ?? ChainDataComplement()
+        let thirdStep: ChainDataComplement = chain.chain?.evolves_to?.first?.evolves_to?.first?.species ?? ChainDataComplement()
         
         print("\n Primera Evolucion --->>> \(firstStep.name) \n")
         print("\n Primera Evolucion --->>> \(secondStep.name) \n")

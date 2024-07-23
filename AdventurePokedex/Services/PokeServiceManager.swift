@@ -22,7 +22,9 @@ class PokeServicesManager: NetworkAPIProtocol {
             handler(.failure(.badURL))
             return
         }
-                
+        
+        print("\n\n\n URL --->>> \(url) \n\n\n")
+        
         URLSession.shared.dataTask(with: .init(url: url)) { data, response, _ in
             guard let data = data, let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 handler(.failure(.badResponse))
