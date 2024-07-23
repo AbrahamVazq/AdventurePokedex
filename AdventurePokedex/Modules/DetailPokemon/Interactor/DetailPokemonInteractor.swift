@@ -11,8 +11,7 @@ class DetailPokemonInteractor: DetailPokemon_PresenterToInteractorProtocol {
     private var strHost: String = "pokeapi.co"
     
     func getToSpritesToInteractor(with id: String) {
-        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration:
-                                                                PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getSprites(fromId: id).getPath() ))
+        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getSprites(fromId: id).getPath()))
         service.launchService {[weak self] (result: Result<SpritesPokemonResponse, ErrorNetwork> ) in
             switch result {
             case .success(let success):
@@ -24,14 +23,11 @@ class DetailPokemonInteractor: DetailPokemon_PresenterToInteractorProtocol {
     }
     
     func getToChainEvolToInteracto(with id: String) {
-        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod,
-                                                                                                     strHost: strHost,
-                                                                                                     path: Paths.getChainEvolution(fromId: id).getPath()))
+        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getChainEvolution(fromId: id).getPath()))
         service.launchService { [weak self] (result: Result<ChainEvolutionResponse, ErrorNetwork>) in
             switch result {
             case .success(let success):
-                print("\n\n\n success --->>> \(success) \n\n\n")
-                //                self?.presenter?.getSpecieInfoFromInteractor(withSpecie: success)
+                self?.presenter?.getChainEvolInfoFromInteractor(withChain: success)
             case .failure(let error):
                 self?.presenter?.getErrorFromInteractor(withError: error as NSError)
             }

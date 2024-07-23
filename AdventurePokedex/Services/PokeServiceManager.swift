@@ -25,16 +25,13 @@ class PokeServicesManager: NetworkAPIProtocol {
                 
         URLSession.shared.dataTask(with: .init(url: url)) { data, response, _ in
             guard let data = data, let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("\n\n\n ERROR --->>> BAD RESPONSE \n\n\n")
                 handler(.failure(.badResponse))
                 return
             }
             
             if let json = try? JSONDecoder().decode(T.self, from: data) {
-                print("\n\n\n JSON --->>> \(json) \n\n\n")
                 handler(.success(json))
-            } else {  
-                print("\n\n\n ERROR --->>> BAD JSON \n\n\n")
+            } else {
                 handler(.failure(.badJSON)) }
         }.resume()
     }

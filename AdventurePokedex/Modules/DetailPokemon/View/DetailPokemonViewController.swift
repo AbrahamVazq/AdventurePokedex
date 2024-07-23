@@ -74,7 +74,7 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
     }  
     
     func updateInfo(withChain chain: ChainEvolutionResponse) {
-        print("\n\n\n chain --->>> \(chain) \n\n\n")
+        print("\n\n\n CHAIN ON DETAIL --->>> \(chain) \n\n\n")
     }
     
     func updateErrorService(withError error: NSError) {
