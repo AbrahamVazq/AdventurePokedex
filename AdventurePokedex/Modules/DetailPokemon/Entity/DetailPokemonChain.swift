@@ -8,3 +8,8 @@
 import Foundation
 
 
+struct DetailPokemonChain: Codable {
+    var name: [String]?
+    var eDetail: [Evolution_details]?
+    
+}

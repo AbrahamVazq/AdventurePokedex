@@ -13,18 +13,12 @@ class ChainDouble: UIView {
     @IBOutlet private weak var lblLevelTwo: UILabel!
     @IBOutlet private weak var imgPkmnOne: UIImageView!
     @IBOutlet private weak var imgPkmnTwo: UIImageView!
-    @IBOutlet private weak var arrowToEvolve: UIImageView! {
-        didSet { self.arrowToEvolve.image = UIImage(named: "arrowshape.right.fill", in: .main, with: .none) }
-    }
-
+    @IBOutlet private weak var arrowToEvolve: UIImageView! { didSet { self.arrowToEvolve.image = UIImage(named: "arrowshape.right.fill", in: .main, with: .none) } }
 
     override func awakeFromNib() { }
     
     class func instantiate(with obj: NSObject) -> ChainDouble {
-        if let nib = Bundle.main.loadNibNamed(ChainDouble.identifier,  owner: self, options: nil)?[0] as? ChainDouble {
-            return nib
-        }
+        if let nib = Bundle.main.loadNibNamed(ChainDouble.identifier,  owner: self, options: nil)?[0] as? ChainDouble { return nib }
         return ChainDouble()
     }
-
 }

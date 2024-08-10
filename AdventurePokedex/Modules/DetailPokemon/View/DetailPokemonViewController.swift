@@ -53,6 +53,19 @@ class DetailPokemonViewController: UIViewController {
         )
     }
     
+    private func addNoChain() {
+        let noEvolution = NoChain.instantiate()
+        self.vwChainEvol.addSubview(noEvolution)
+        vwChainEvol.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [vwChainEvol.leadingAnchor.constraint(equalTo: vwChainEvol.leadingAnchor),
+             vwChainEvol.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
+             vwChainEvol.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
+             vwChainEvol.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
+            ]
+        )
+    }
+    
     private func updateChainEvolution(withIDSpecie id: String) {
         self.presenter?.getToChainEvol(with: id)
     }
@@ -72,9 +85,15 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
             self.cvPokemon.reloadData()
         }
     }  
-    
-    func updateInfo(withChain chain: ChainEvolutionResponse) {
-        print("\n\n\n CHAIN ON DETAIL --->>> \(chain) \n\n\n")
+        
+    func updateInfo(withChain chain: [DetailPokemonChain]) {
+        print("\n\n\n Chain en VIEW contiene --->>> \(chain ) \n\n\n")
+        
+        DispatchQueue.main.async {
+            if chain.count == 0 {
+                self.addNoChain()
+            }
+        }
     }
     
     func updateErrorService(withError error: NSError) {

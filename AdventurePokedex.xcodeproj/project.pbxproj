@@ -47,6 +47,8 @@
 		A43FD19E2B15C91E007ADE79 /* AllPokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD19D2B15C91E007ADE79 /* AllPokemonResponse.swift */; };
 		A43FD1B22B15D2A7007ADE79 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43FD1B12B15D2A7007ADE79 /* UIViewController+Extension.swift */; };
 		A46699912C4F421B00D991B5 /* DetailPokemonChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46699902C4F421B00D991B5 /* DetailPokemonChain.swift */; };
+		A46699942C4F94FB00D991B5 /* NoChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46699932C4F94FB00D991B5 /* NoChain.swift */; };
+		A46699962C4F950F00D991B5 /* NoChain.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46699952C4F950F00D991B5 /* NoChain.xib */; };
 		A47E942F2B702A560049E311 /* DetailPokemonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A47E942E2B702A560049E311 /* DetailPokemonViewController.xib */; };
 		A47E94322B7087AD0049E311 /* SpritesPokemonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E94312B7087AD0049E311 /* SpritesPokemonResponse.swift */; };
 		A47E94342B708D8A0049E311 /* SpritesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E94332B708D8A0049E311 /* SpritesResponse.swift */; };
@@ -100,6 +102,8 @@
 		A43FD19D2B15C91E007ADE79 /* AllPokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPokemonResponse.swift; sourceTree = "<group>"; };
 		A43FD1B12B15D2A7007ADE79 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A46699902C4F421B00D991B5 /* DetailPokemonChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPokemonChain.swift; sourceTree = "<group>"; };
+		A46699932C4F94FB00D991B5 /* NoChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoChain.swift; sourceTree = "<group>"; };
+		A46699952C4F950F00D991B5 /* NoChain.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoChain.xib; sourceTree = "<group>"; };
 		A47E942E2B702A560049E311 /* DetailPokemonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPokemonViewController.xib; sourceTree = "<group>"; };
 		A47E94312B7087AD0049E311 /* SpritesPokemonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpritesPokemonResponse.swift; sourceTree = "<group>"; };
 		A47E94332B708D8A0049E311 /* SpritesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpritesResponse.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 		A43181092B7AC38900E2C65E /* ChainEvolution */ = {
 			isa = PBXGroup;
 			children = (
+				A46699922C4F94C700D991B5 /* NoChain */,
 				A431810A2B7AC39500E2C65E /* ChainSimple */,
 				A431810B2B7AC3A800E2C65E /* ChainDouble */,
 			);
@@ -496,6 +501,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		A46699922C4F94C700D991B5 /* NoChain */ = {
+			isa = PBXGroup;
+			children = (
+				A46699932C4F94FB00D991B5 /* NoChain.swift */,
+				A46699952C4F950F00D991B5 /* NoChain.xib */,
+			);
+			path = NoChain;
+			sourceTree = "<group>";
+		};
 		A47E94302B7087630049E311 /* SpritesPokemonResponse */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +605,7 @@
 				A43013E92B5A3BAC00CFDD85 /* PokemonSpriteCollectionViewCell.xib in Resources */,
 				A405FCA12B158AB70088D8FA /* Assets.xcassets in Resources */,
 				A43181112B7ACA5700E2C65E /* Main.storyboard in Resources */,
+				A46699962C4F950F00D991B5 /* NoChain.xib in Resources */,
 				A43FD1702B15BA6E007ADE79 /* AllPokemonViewController.xib in Resources */,
 				A43FD1772B15BBAC007ADE79 /* AllPokemonTableViewCell.xib in Resources */,
 				A47E942F2B702A560049E311 /* DetailPokemonViewController.xib in Resources */,
@@ -622,6 +637,7 @@
 				A43FD1972B15C5D9007ADE79 /* ErrorNetwork.swift in Sources */,
 				A431810D2B7AC3EF00E2C65E /* ChainSimple.swift in Sources */,
 				A405FC982B158AB50088D8FA /* AppDelegate.swift in Sources */,
+				A46699942C4F94FB00D991B5 /* NoChain.swift in Sources */,
 				A46699912C4F421B00D991B5 /* DetailPokemonChain.swift in Sources */,
 				A43FD1952B15C578007ADE79 /* String+Extension.swift in Sources */,
 				A43FD1992B15C7AA007ADE79 /* Paths.swift in Sources */,

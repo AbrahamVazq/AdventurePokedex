@@ -14,9 +14,7 @@ class ChainSimple: UIView {
     override func awakeFromNib() { }
     
     class func instantiate(with obj: NSObject) -> ChainSimple {
-        if let nib = Bundle.main.loadNibNamed(ChainSimple.identifier,  owner: self, options: nil)?[0] as? ChainSimple {
-            return nib
-        }
+        if let nib = Bundle.main.loadNibNamed(ChainSimple.identifier,  owner: self, options: nil)?[0] as? ChainSimple { return nib }
         return ChainSimple()
     }
 
