@@ -22,9 +22,9 @@ class ChainDouble: UIView {
     
     class func instantiate(with obj: DetailPokemonChain) -> ChainDouble {
         if let nib = Bundle.main.loadNibNamed(ChainDouble.identifier,  owner: self, options: nil)?[0] as? ChainDouble {
-            nib.lblTitleOne.text = obj.name?.first
-            nib.lblTitleTwo.text = obj.name?[1]
-            nib.lblbTitleThree.text = obj.name?.last
+            nib.lblTitleOne.text = obj.name?.first?.capitalized
+            nib.lblTitleTwo.text = obj.name?[1].capitalized
+            nib.lblbTitleThree.text = obj.name?.last?.capitalized
             return nib
         }
         return ChainDouble()

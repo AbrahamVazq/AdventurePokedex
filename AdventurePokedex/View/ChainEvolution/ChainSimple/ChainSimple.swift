@@ -19,8 +19,8 @@ class ChainSimple: UIView {
     
     class func instantiate(with obj: DetailPokemonChain) -> ChainSimple {
         if let nib = Bundle.main.loadNibNamed(ChainSimple.identifier,  owner: self, options: nil)?.first as? ChainSimple {
-            nib.lblTitleOne.text = obj.name?.first
-            nib.lblTitleTwo.text = obj.name?.last
+            nib.lblTitleOne.text = obj.name?.first?.capitalized
+            nib.lblTitleTwo.text = obj.name?.last?.capitalized
             return nib }
         return ChainSimple()
     }
