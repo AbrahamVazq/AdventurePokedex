@@ -10,7 +10,6 @@ class ChainSimple: UIView {
     @IBOutlet private weak var lblTitleOne: UILabel!
     @IBOutlet private weak var lblTitleTwo: UILabel!
     @IBOutlet private weak var lblLevelOne: UILabel!
-    @IBOutlet private weak var lblLevelTwo: UILabel!
     @IBOutlet private weak var imgPkmnOne: UIImageView!
     @IBOutlet private weak var imgPkmnTwo: UIImageView!
     @IBOutlet private weak var imgArrow : UIImageView!
@@ -21,8 +20,10 @@ class ChainSimple: UIView {
         if let nib = Bundle.main.loadNibNamed(ChainSimple.identifier,  owner: self, options: nil)?.first as? ChainSimple {
             nib.lblTitleOne.text = obj.name?.first?.capitalized
             nib.lblTitleTwo.text = obj.name?.last?.capitalized
-            return nib }
+            nib.lblLevelOne.text = "Nivel: \(obj.eDetail?.first?.min_level ?? 0)"
+            return nib
+        }
         return ChainSimple()
     }
-
 }
+ 

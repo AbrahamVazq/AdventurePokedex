@@ -20,14 +20,10 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
     }
     
     private func returnChainEvolution(withChain chain: ChainEvolutionResponse) -> DetailPokemonChain {
-        
         if chain.chain?.evolves_to?.count == 0 { return DetailPokemonChain() }
-    
-        let arrNames: [String] = setEvolutionNames(withChain: chain)
-        //TODO: Mandar los demas datos detalle para la evolucion
-        //var arrComplementarios: [] = [DetailPokemonChain]
         var objEvolution: DetailPokemonChain = DetailPokemonChain()
-        objEvolution.name = arrNames
+        objEvolution.name = setEvolutionNames(withChain: chain)
+        objEvolution.eDetail = setEvolutionDetails(withChain: chain)
         return objEvolution
     }
     
@@ -39,6 +35,15 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         arrNames = arrNames.filter({ $0 != ""})
         return arrNames
     }
+    
+    func setEvolutionDetails(withChain chain:  ChainEvolutionResponse) -> [Evolution_details] {
+        var arrDetails:[Evolution_details] = [Evolution_details]()
+        arrDetails.insert(chain.chain?.evolves_to?.first?.evolution_details?.first ?? Evolution_details(), at: 0)
+        if chain.chain?.evolves_to?.first?.evolves_to?.first?.evolution_details?.first != nil {
+            arrDetails.insert(chain.chain?.evolves_to?.first?.evolves_to?.first?.evolution_details?.first ?? Evolution_details(), at: 1)
+        }
+        return arrDetails
+    }    
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R

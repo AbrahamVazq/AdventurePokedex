@@ -25,7 +25,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bG-hZ-o0i">
-                            <rect key="frame" x="41.5" y="91" width="42" height="21"/>
+                            <rect key="frame" x="139" y="91" width="42" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -57,26 +57,18 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1F7-2Q-fw4">
-                            <rect key="frame" x="236.5" y="91" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="1F7-2Q-fw4" secondAttribute="bottom" constant="8" id="01c-XS-gnD"/>
                         <constraint firstItem="gBR-VF-9rZ" firstAttribute="top" secondItem="7jM-wp-upl" secondAttribute="top" constant="8" id="6gj-sa-B8c"/>
                         <constraint firstAttribute="trailing" secondItem="cM4-Ep-oCM" secondAttribute="trailing" constant="40" id="G9B-Cv-aWk"/>
-                        <constraint firstItem="1bG-hZ-o0i" firstAttribute="centerX" secondItem="HCe-1S-9dk" secondAttribute="centerX" id="P4r-a2-ugi"/>
                         <constraint firstItem="cM4-Ep-oCM" firstAttribute="centerY" secondItem="7jM-wp-upl" secondAttribute="centerY" id="VKd-eW-LRP"/>
                         <constraint firstItem="J8e-BS-fY0" firstAttribute="centerY" secondItem="7jM-wp-upl" secondAttribute="centerY" id="aFr-eS-zie"/>
                         <constraint firstItem="dBA-hA-5yI" firstAttribute="top" secondItem="7jM-wp-upl" secondAttribute="top" constant="8" id="abk-LQ-L4d"/>
+                        <constraint firstItem="1bG-hZ-o0i" firstAttribute="centerX" secondItem="7jM-wp-upl" secondAttribute="centerX" id="gIM-dL-A9R"/>
                         <constraint firstItem="J8e-BS-fY0" firstAttribute="centerX" secondItem="7jM-wp-upl" secondAttribute="centerX" id="h4Q-Ef-uUp"/>
                         <constraint firstItem="HCe-1S-9dk" firstAttribute="centerY" secondItem="7jM-wp-upl" secondAttribute="centerY" id="kC3-Y0-Vus"/>
                         <constraint firstItem="dBA-hA-5yI" firstAttribute="centerX" secondItem="HCe-1S-9dk" secondAttribute="centerX" id="kEE-gq-nO1"/>
-                        <constraint firstItem="1F7-2Q-fw4" firstAttribute="centerX" secondItem="cM4-Ep-oCM" secondAttribute="centerX" id="rnW-qp-VAK"/>
                         <constraint firstItem="HCe-1S-9dk" firstAttribute="leading" secondItem="7jM-wp-upl" secondAttribute="leading" constant="40" id="wnc-i4-C4z"/>
                         <constraint firstAttribute="bottom" secondItem="1bG-hZ-o0i" secondAttribute="bottom" constant="8" id="xNE-se-0T6"/>
                         <constraint firstItem="gBR-VF-9rZ" firstAttribute="centerX" secondItem="cM4-Ep-oCM" secondAttribute="centerX" id="ztF-iI-a6z"/>
@@ -98,7 +90,6 @@
                 <outlet property="imgPkmnOne" destination="HCe-1S-9dk" id="ZGZ-ZS-gmk"/>
                 <outlet property="imgPkmnTwo" destination="cM4-Ep-oCM" id="hfi-3X-EHB"/>
                 <outlet property="lblLevelOne" destination="1bG-hZ-o0i" id="Pql-ke-yAZ"/>
-                <outlet property="lblLevelTwo" destination="1F7-2Q-fw4" id="haw-nT-OQG"/>
                 <outlet property="lblTitleOne" destination="dBA-hA-5yI" id="klG-oU-XUM"/>
                 <outlet property="lblTitleTwo" destination="gBR-VF-9rZ" id="3q4-BK-c60"/>
                 <outlet property="vwContainer" destination="7jM-wp-upl" id="PCV-iQ-1B7"/>
