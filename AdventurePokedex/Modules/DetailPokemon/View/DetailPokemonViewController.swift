@@ -85,7 +85,7 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
         
     func updateInfo(withChain chain: DetailPokemonChain) {
         DispatchQueue.main.async {
-            if chain.name?.count == 0 {
+            if chain.name?.count == 0 || chain.name?.count == nil {
                 self.addNoChain()
             } else {
                 self.addSimpleChain(withState: chain.name?.count == 3, andDetailPokemonChain: chain)
