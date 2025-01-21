@@ -39,8 +39,8 @@ class DetailPokemonViewController: UIViewController {
         return "\(types.first?.type?.name?.translate() ?? "") \(types.count == 2 ? "/ \(types.last?.type?.name?.translate() ?? "" )" : "" )"
     }
     
-    private func addSimpleChain(withState state: Bool = false) {
-        let evolutionView = state ?  ChainDouble.instantiate(with: NSObject()) : ChainSimple.instantiate(with: NSObject())
+    private func addSimpleChain(withState state: Bool = false, andDetailPokemonChain detailPokemonChain : DetailPokemonChain ) {
+        let evolutionView = state ?  ChainDouble.instantiate(with: detailPokemonChain) : ChainSimple.instantiate(with: detailPokemonChain )
         self.vwChainEvol.addSubview(evolutionView)
         vwChainEvol.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
@@ -88,11 +88,7 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
             if chain.name?.count == 0 {
                 self.addNoChain()
             } else {
-                if chain.name?.count == 3 {
-                    self.addSimpleChain(withState: true)
-                }else {
-                    self.addSimpleChain()
-                }
+                self.addSimpleChain(withState: chain.name?.count == 3, andDetailPokemonChain: chain)
             }
         }
     }

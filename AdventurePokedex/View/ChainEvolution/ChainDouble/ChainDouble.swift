@@ -17,8 +17,15 @@ class ChainDouble: UIView {
 
     override func awakeFromNib() { }
     
-    class func instantiate(with obj: NSObject) -> ChainDouble {
-        if let nib = Bundle.main.loadNibNamed(ChainDouble.identifier,  owner: self, options: nil)?[0] as? ChainDouble { return nib }
+    class func instantiate(with obj: DetailPokemonChain) -> ChainDouble {
+        print("\n\n\n obj tiene --->>> \(obj) \n\n\n")
+        if let nib = Bundle.main.loadNibNamed(ChainDouble.identifier,  owner: self, options: nil)?[0] as? ChainDouble {
+            print("\n\n\n obj.eDetail?.first?.item?.name \(obj.eDetail?.first?.item?.name) \n\n\n")
+            print("\n\n\n obj.eDetail?.last?.item?.name \(obj.eDetail?.last?.item?.name) \n\n\n")
+            nib.lblTitleOne.text = obj.name?.first
+            nib.lblTitleTwo.text = obj.name?.last
+            return nib
+        }
         return ChainDouble()
     }
 }
