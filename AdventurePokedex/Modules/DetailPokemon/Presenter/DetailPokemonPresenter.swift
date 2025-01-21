@@ -19,51 +19,25 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         interactor?.getToChainEvolToInteracto(with: id)
     }
     
-    private func returnChainEvolution(withChain chain: ChainEvolutionResponse) -> [DetailPokemonChain] {
-
-        print("\n\n Chain.chain.evolvesTo.count --->>> \(chain.chain?.evolves_to?.count ?? 0) \n")
-        print("\n\n Chain.chain.evolvesTo.first--->>> \(chain.chain?.evolves_to?.first ?? Evolves_to()) \n")
-        print("\n\n Chain.chain.evolvesTo.first.evolves_to.count --->>> \(chain.chain?.evolves_to?.first?.evolves_to?.count ?? 0) \n")
-        print("\n\n Chain.chain.evolvesTo.first.evolves_to.first --->>> \(chain.chain?.evolves_to?.first?.evolves_to?.first ?? Evolves_to()) \n")
+    private func returnChainEvolution(withChain chain: ChainEvolutionResponse) -> DetailPokemonChain {
         
-        let firstStep: ChainDataComplement = chain.chain?.species ?? ChainDataComplement()
-        let secondStep: ChainDataComplement = chain.chain?.evolves_to?.first?.species ?? ChainDataComplement()
-        let thirdStep: ChainDataComplement = chain.chain?.evolves_to?.first?.evolves_to?.first?.species ?? ChainDataComplement()
-        
-        print("\n Primera Evolucion --->>> \(firstStep.name) \n")
-        print("\n Segunda Evolucion --->>> \(secondStep.name) \n")
-        print("\n Tercera Evolucion --->>> \(thirdStep.name) \n")
-        
-        
-        var arrEvolution: [DetailPokemonChain] = []
-        
-        if chain.chain?.evolves_to?.count == 0 {
-            return []
-        }else if chain.chain?.evolves_to?.count == 1 && chain.chain?.evolves_to?.first?.evolves_to?.count == 0 {
-            print("\n\n\n UNA EVOLUCION \n\n\n")
-            var selfEvol =  chain.chain?.evolves_to?.first?.evolution_details?.first ?? Evolution_details()
-            var arrNames: [String] = []
-            arrNames[0] = firstStep.name ?? ""
-            arrNames[1] = secondStep.name ?? ""
-            
-            var arrEvolDetail: [Evolution_details] = []
-            arrEvolDetail.append(selfEvol)
-            
-            var simpleEvol: DetailPokemonChain = DetailPokemonChain(name: arrNames, eDetail: arrEvolDetail )
-            
-            print("\n\n\n arrEvolution Contiene --->>> \(arrEvolution) \n\n\n")
-            return arrEvolution
-        }else if chain.chain?.evolves_to?.first?.evolves_to?.count == 0 {
-            
-        }else if chain.chain?.evolves_to?.count == 0 {
-           
-        }
-        
-        return arrEvolution
-        
+        if chain.chain?.evolves_to?.count == 0 { return DetailPokemonChain() }
+    
+        let arrNames: [String] = setEvolutionNames(withChain: chain)
+        //TODO: Mandar los demas datos detalle para la evolucion
+        //var arrComplementarios: [] = [DetailPokemonChain]
+        var objEvolution: DetailPokemonChain = DetailPokemonChain()
+        objEvolution.name = arrNames
+        return objEvolution
     }
     
-    
+    func setEvolutionNames(withChain chain: ChainEvolutionResponse) -> [String] {
+        var arrNames: [String] = [String]()
+        arrNames.insert(chain.chain?.species?.name ?? "", at: 0)
+        arrNames.insert(chain.chain?.evolves_to?.first?.species?.name ?? "", at: 1)
+        arrNames.insert(chain.chain?.evolves_to?.first?.evolves_to?.first?.species?.name ?? "", at: 2)
+        return arrNames
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R

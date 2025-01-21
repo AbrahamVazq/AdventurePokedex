@@ -31,8 +31,7 @@ class DetailPokemonViewController: UIViewController {
     
     private func setUpCollectionView(){
         self.cvPokemon.dataSource = self
-        self.cvPokemon.register(PokemonSpriteCollectionViewCell.nib,
-                            forCellWithReuseIdentifier: PokemonSpriteCollectionViewCell.identifier)
+        self.cvPokemon.register(PokemonSpriteCollectionViewCell.nib, forCellWithReuseIdentifier: PokemonSpriteCollectionViewCell.identifier)
     }
     
     private func returnTypes(from pokemonInfo: SpritesPokemonResponse) -> String {
@@ -49,8 +48,7 @@ class DetailPokemonViewController: UIViewController {
              vwChainEvol.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
              vwChainEvol.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
              vwChainEvol.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
-            ]
-        )
+            ])
     }
     
     private func addNoChain() {
@@ -62,8 +60,7 @@ class DetailPokemonViewController: UIViewController {
              vwChainEvol.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
              vwChainEvol.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
              vwChainEvol.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
-            ]
-        )
+            ])
     }
     
     private func updateChainEvolution(withIDSpecie id: String) {
@@ -86,12 +83,16 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
         }
     }  
         
-    func updateInfo(withChain chain: [DetailPokemonChain]) {
-        print("\n\n\n Chain en VIEW contiene --->>> \(chain ) \n\n\n")
-        
+    func updateInfo(withChain chain: DetailPokemonChain) {
         DispatchQueue.main.async {
-            if chain.count == 0 {
+            if chain.name?.count == 0 {
                 self.addNoChain()
+            } else {
+                if chain.name?.count == 3 {
+                    self.addSimpleChain(withState: true)
+                }else {
+                    self.addSimpleChain()
+                }
             }
         }
     }
