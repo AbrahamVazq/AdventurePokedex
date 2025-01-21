@@ -12,7 +12,6 @@ class ChainDouble: UIView {
     @IBOutlet private weak var lblLevelOne: UILabel!
     @IBOutlet private weak var lblLevelTwo: UILabel!
     @IBOutlet private weak var lblbTitleThree : UILabel!
-    @IBOutlet private weak var lblLevelThree : UILabel!
     @IBOutlet private weak var imgPkmnOne: UIImageView!
     @IBOutlet private weak var imgPkmnTwo: UIImageView!
     @IBOutlet private weak var imgPkmnThree: UIImageView!
@@ -25,6 +24,8 @@ class ChainDouble: UIView {
             nib.lblTitleOne.text = obj.name?.first?.capitalized
             nib.lblTitleTwo.text = obj.name?[1].capitalized
             nib.lblbTitleThree.text = obj.name?.last?.capitalized
+            nib.lblLevelOne.text = "Nivel: \(obj.eDetail?.first?.min_level ?? 0)"
+            nib.lblLevelTwo.text = "Nivel: \(obj.eDetail?.last?.min_level ?? 0)"
             return nib
         }
         return ChainDouble()
