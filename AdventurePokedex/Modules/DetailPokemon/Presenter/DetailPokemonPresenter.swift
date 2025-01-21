@@ -36,6 +36,7 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         arrNames.insert(chain.chain?.species?.name ?? "", at: 0)
         arrNames.insert(chain.chain?.evolves_to?.first?.species?.name ?? "", at: 1)
         arrNames.insert(chain.chain?.evolves_to?.first?.evolves_to?.first?.species?.name ?? "", at: 2)
+        arrNames = arrNames.filter({ $0 != ""})
         return arrNames
     }
 }

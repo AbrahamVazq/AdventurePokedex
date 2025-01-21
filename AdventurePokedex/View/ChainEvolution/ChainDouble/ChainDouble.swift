@@ -21,7 +21,6 @@ class ChainDouble: UIView {
     override func awakeFromNib() { }
     
     class func instantiate(with obj: DetailPokemonChain) -> ChainDouble {
-        print("\n\n\n obj tiene --->>> \(obj) \n\n\n")
         if let nib = Bundle.main.loadNibNamed(ChainDouble.identifier,  owner: self, options: nil)?[0] as? ChainDouble {
             nib.lblTitleOne.text = obj.name?.first
             nib.lblTitleTwo.text = obj.name?[1]
