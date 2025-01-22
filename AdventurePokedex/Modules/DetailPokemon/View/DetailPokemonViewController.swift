@@ -85,15 +85,13 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
         
     func updateInfo(withChain chain: DetailPokemonChain) {
         DispatchQueue.main.async {
-            if chain.name?.count == 0 || chain.name?.count == nil {
-                self.addNoChain()
-            } else {
+            if let count = chain.name?.count, count > 0 {
                 self.addSimpleChain(withState: chain.name?.count == 3, andDetailPokemonChain: chain)
-            }
+            } else { self.addNoChain() }
         }
     }
     
     func updateErrorService(withError error: NSError) {
-        print("\n\n\n type of: ERROR --->>> \( error.localizedDescription) \n\n\n")
+        self.showAlert(andMessage: error.localizedDescription)
     }
 }
