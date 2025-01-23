@@ -41,25 +41,27 @@ class DetailPokemonViewController: UIViewController {
     
     private func addSimpleChain(withState state: Bool = false, andDetailPokemonChain detailPokemonChain : DetailPokemonChain ) {
         let evolutionView = state ?  ChainDouble.instantiate(with: detailPokemonChain) : ChainSimple.instantiate(with: detailPokemonChain )
+        evolutionView.frame = vwChainEvol.bounds
         self.vwChainEvol.addSubview(evolutionView)
         vwChainEvol.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-            [vwChainEvol.leadingAnchor.constraint(equalTo: vwChainEvol.leadingAnchor),
-             vwChainEvol.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
-             vwChainEvol.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
-             vwChainEvol.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
+            [evolutionView.leadingAnchor.constraint(equalTo: vwChainEvol.leadingAnchor),
+             evolutionView.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
+             evolutionView.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
+             evolutionView.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
             ])
     }
     
     private func addNoChain() {
         let noEvolution = NoChain.instantiate()
         self.vwChainEvol.addSubview(noEvolution)
+        noEvolution.frame = vwChainEvol.bounds
         vwChainEvol.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
-            [vwChainEvol.leadingAnchor.constraint(equalTo: vwChainEvol.leadingAnchor),
-             vwChainEvol.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
-             vwChainEvol.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
-             vwChainEvol.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
+            [noEvolution.leadingAnchor.constraint(equalTo: vwChainEvol.leadingAnchor),
+             noEvolution.trailingAnchor.constraint(equalTo: vwChainEvol.trailingAnchor),
+             noEvolution.topAnchor.constraint(equalTo: vwChainEvol.topAnchor),
+             noEvolution.bottomAnchor.constraint(equalTo: vwChainEvol.bottomAnchor),
             ])
     }
     
