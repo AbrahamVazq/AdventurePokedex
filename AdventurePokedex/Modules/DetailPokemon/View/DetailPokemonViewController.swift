@@ -73,7 +73,6 @@ class DetailPokemonViewController: UIViewController {
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
-    
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse) {
         self.arrSprites = self.arrSprites.returnSprites(fromSprites: pokemonInfo.sprites ?? SpritesResponse())
         DispatchQueue.main.async {
@@ -83,9 +82,9 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
             self.lblTypesPokemon.text = self.returnTypes(from: pokemonInfo)
             self.cvPokemon.reloadData()
         }
-    }  
-        
-    func updateInfo(withChain chain: DetailPokemonChain) {
+    }
+    
+    func updateInfo(withChain chain: DetailPokemonChain, andDetail: [String]) {
         DispatchQueue.main.async {
             if let count = chain.name?.count, count > 0 {
                 self.addSimpleChain(withState: chain.name?.count == 3, andDetailPokemonChain: chain)

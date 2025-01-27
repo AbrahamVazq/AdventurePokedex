@@ -10,6 +10,7 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
     weak var view: DetailPokemon_PresenterToViewProtocol?
     var interactor: DetailPokemon_PresenterToInteractorProtocol?
     var router: DetailPokemon_PresenterToRouterProtocol?
+    var arrSimpleDetail: [String] = []
     
     func getToSprites(with id: String) {
         interactor?.getToSpritesToInteractor(with: id)
@@ -39,11 +40,34 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
     func setEvolutionDetails(withChain chain:  ChainEvolutionResponse) -> [Evolution_details] {
         var arrDetails:[Evolution_details] = [Evolution_details]()
         arrDetails.insert(chain.chain?.evolves_to?.first?.evolution_details?.first ?? Evolution_details(), at: 0)
-        if chain.chain?.evolves_to?.first?.evolves_to?.first?.evolution_details?.first != nil {
-            arrDetails.insert(chain.chain?.evolves_to?.first?.evolves_to?.first?.evolution_details?.first ?? Evolution_details(), at: 1)
+        if let evolDetail = chain.chain?.evolves_to?.first?.evolves_to?.first?.evolution_details?.first {
+            arrDetails.insert(evolDetail, at: 1)
+            arrSimpleDetail = cleanNilsFrom(dictionary: propertiesNoNil(evolDetail))
         }
         return arrDetails
-    }    
+    }
+    
+    func propertiesNoNil(_ obj: Evolution_details) -> [String: Any] {
+        let mirror = Mirror(reflecting: obj)
+        var resultado:[String:Any ] = [:]
+        for (property, value) in mirror.children {
+            if let propertyName = property, let noNilValue = value as Any? {
+                resultado[propertyName] = noNilValue
+            }
+        }
+        return resultado
+    }
+
+    func cleanNilsFrom(dictionary dct: [String: Any]) -> [String] {
+        var arrResult: [String] = []
+        let _: [String: Any] = dct.compactMapValues { value in
+            arrResult.append("\(value)")
+            arrResult = arrResult.filter({ $0 != "nil"})
+            return arrResult
+        }
+        return arrResult
+    }
+
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
@@ -53,7 +77,9 @@ extension DetailPokemonPresenter: DetailPokemon_InteractorToPresenterProtocol {
     }
 
     func getChainEvolInfoFromInteractor(withChain chain: ChainEvolutionResponse) {
-        view?.updateInfo(withChain: self.returnChainEvolution(withChain: chain))
+        let chain: DetailPokemonChain = self.returnChainEvolution(withChain: chain)
+        let arrFinalDetail = self.arrSimpleDetail
+        view?.updateInfo(withChain: chain, andDetail: arrFinalDetail)
     }
     
     func getErrorFromInteractor(withError error: NSError) {
