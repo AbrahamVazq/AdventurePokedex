@@ -25,6 +25,7 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         if chain.chain?.evolves_to?.count == 0 { return DetailPokemonChain() }
         var objEvolution: DetailPokemonChain = DetailPokemonChain()
         objEvolution.name = setEvolutionNames(withChain: chain)
+        objEvolution.urlSprite = setEvolutionURLsSprites(withChain: chain)
         objEvolution.eDetail = setEvolutionDetails(withChain: chain)
         return objEvolution
     }
@@ -34,6 +35,15 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         arrNames.insert(chain.chain?.species?.name ?? "", at: 0)
         arrNames.insert(chain.chain?.evolves_to?.first?.species?.name ?? "", at: 1)
         arrNames.insert(chain.chain?.evolves_to?.first?.evolves_to?.first?.species?.name ?? "", at: 2)
+        arrNames = arrNames.filter({ $0 != ""})
+        return arrNames
+    }
+    
+    func setEvolutionURLsSprites(withChain chain: ChainEvolutionResponse) -> [String] {
+        var arrNames: [String] = [String]()
+        arrNames.insert(chain.chain?.species?.url ?? "", at: 0)
+        arrNames.insert(chain.chain?.evolves_to?.first?.species?.url ?? "", at: 1)
+        arrNames.insert(chain.chain?.evolves_to?.first?.evolves_to?.first?.species?.url ?? "", at: 2)
         arrNames = arrNames.filter({ $0 != ""})
         return arrNames
     }

@@ -10,6 +10,13 @@ extension String: PathsProtocol {
 
 extension String {
     
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+    var isNumeric: Bool {
+        return !isEmpty && range(of: "[^0-9]", options: .regularExpression) == nil
+    }
+    
     func returnIDToSpecieChain() -> String {
         var aux = ""
         var arrAux: [String] = []
@@ -17,6 +24,13 @@ extension String {
         aux = arrAux.count == 2 ? arrAux[1] : "noTengoNada"
         aux = aux.replacingOccurrences(of: "/", with: "")
         return aux
+    }
+    
+    func returnIDwithURL() -> String {
+        var arrAux: [String] = []
+        arrAux.append(contentsOf: self.components(separatedBy: "/" ))
+        arrAux = arrAux.filter { $0.isNumeric }
+        return arrAux.first ?? "noTengoNada"
     }
     
     func translate() -> String {

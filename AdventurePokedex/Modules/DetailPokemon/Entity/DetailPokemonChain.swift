@@ -6,5 +6,6 @@ import Foundation
 
 struct DetailPokemonChain: Codable {
     var name: [String]?
+    var urlSprite: [String]?
     var eDetail: [Evolution_details]?
 }

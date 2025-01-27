@@ -18,9 +18,12 @@ class DetailPokemonViewController: UIViewController {
     //MARK: - V A R I A B L E S
     var idPokemon: String = ""
     var idSpecie: String = ""
+    var evolNumber: Int = 0
     var arrSprites: [String] = []
+    var arrURLsSprites: [String] = []
+    var switchToMainSprite: Bool = false
     var presenter: DetailPokemon_ViewToPresenterProtocol?
-
+    
     // MARK: Lifecycle
     override func viewDidLoad() { 
         super.viewDidLoad()
@@ -68,6 +71,7 @@ class DetailPokemonViewController: UIViewController {
     private func updateChainEvolution(withIDSpecie id: String) {
         self.presenter?.getToChainEvol(with: id)
     }
+
 }
 
 

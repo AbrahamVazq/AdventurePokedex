@@ -13,4 +13,8 @@ extension Array {
         aux.append(sprites.back_shiny ?? "")
         return aux
     }
+    
+    subscript (safe index: Index) -> Element? {
+        .zero <= index && index < count ? self[index] : nil
+    }
 }

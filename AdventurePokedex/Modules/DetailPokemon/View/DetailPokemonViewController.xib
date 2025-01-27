@@ -89,7 +89,6 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGP-Sb-1un">
                     <rect key="frame" x="0.0" y="190" width="320" height="124"/>
-                    <color key="backgroundColor" systemColor="systemMintColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="124" id="4RY-N6-e9p"/>
                     </constraints>
@@ -111,9 +110,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
