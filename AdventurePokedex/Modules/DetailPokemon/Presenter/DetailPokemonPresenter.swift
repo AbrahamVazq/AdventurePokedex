@@ -11,6 +11,7 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
     var interactor: DetailPokemon_PresenterToInteractorProtocol?
     var router: DetailPokemon_PresenterToRouterProtocol?
     var arrSimpleDetail: [String] = []
+    var trigger: String = ""
     
     func getToSprites(with id: String) {
         interactor?.getToSpritesToInteractor(with: id)
@@ -43,6 +44,7 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         if let evolDetail = chain.chain?.evolves_to?.first?.evolves_to?.first?.evolution_details?.first {
             arrDetails.insert(evolDetail, at: 1)
             arrSimpleDetail = cleanNilsFrom(dictionary: propertiesNoNil(evolDetail))
+            self.trigger = evolDetail.trigger?.name ?? ""
         }
         return arrDetails
     }
@@ -67,6 +69,10 @@ class DetailPokemonPresenter: DetailPokemon_ViewToPresenterProtocol {
         }
         return arrResult
     }
+    
+    func getTrigger(onEvol triger:ChainDataComplement) -> String {
+        return triger.name ?? ""
+    }
 
 }
 
@@ -79,7 +85,8 @@ extension DetailPokemonPresenter: DetailPokemon_InteractorToPresenterProtocol {
     func getChainEvolInfoFromInteractor(withChain chain: ChainEvolutionResponse) {
         let chain: DetailPokemonChain = self.returnChainEvolution(withChain: chain)
         let arrFinalDetail = self.arrSimpleDetail
-        view?.updateInfo(withChain: chain, andDetail: arrFinalDetail)
+        let trigger = self.trigger
+        view?.updateInfo(withChain: chain, trigger: trigger , andDetail: arrFinalDetail)
     }
     
     func getErrorFromInteractor(withError error: NSError) {

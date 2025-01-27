@@ -101,7 +101,7 @@ protocol DetailPokemon_PresenterToViewProtocol: AnyObject {
     var presenter: DetailPokemon_ViewToPresenterProtocol? { get set }
     
     func updateInfo(onPokemon pokemonInfo: SpritesPokemonResponse)
-    func updateInfo(withChain chain: DetailPokemonChain, andDetail: [String])
+    func updateInfo(withChain chain: DetailPokemonChain, trigger: String, andDetail: [String])
     
     func updateErrorService(withError error: NSError)
 }

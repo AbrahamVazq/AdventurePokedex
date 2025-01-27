@@ -15,17 +15,18 @@ class ChainDouble: UIView {
     @IBOutlet private weak var imgPkmnOne: UIImageView!
     @IBOutlet private weak var imgPkmnTwo: UIImageView!
     @IBOutlet private weak var imgPkmnThree: UIImageView!
-    @IBOutlet private weak var arrowToEvolve: UIImageView! { didSet { self.arrowToEvolve.image = UIImage(named: "arrowshape.right.fill", in: .main, with: .none) } }
 
     override func awakeFromNib() { }
     
-    class func instantiate(with obj: DetailPokemonChain) -> ChainDouble {
+    class func instantiate(with obj: DetailPokemonChain, evolTrade: Bool = false) -> ChainDouble {
         if let nib = Bundle.main.loadNibNamed(ChainDouble.identifier,  owner: self, options: nil)?[0] as? ChainDouble {
+            nib.imgPkmnOne.image = UIImage(systemName: "arrow.right")
+            nib.imgPkmnTwo.image = UIImage(named: "arrowshape.right.circle.fill")
             nib.lblTitleOne.text = obj.name?.first?.capitalized
             nib.lblTitleTwo.text = obj.name?[1].capitalized
             nib.lblbTitleThree.text = obj.name?.last?.capitalized
             nib.lblLevelOne.text = "Nivel: \(obj.eDetail?.first?.min_level ?? 0)"
-            nib.lblLevelTwo.text = "Nivel: \(obj.eDetail?.last?.min_level ?? 0)"
+            nib.lblLevelTwo.text = evolTrade ? "Intercambio" : "Nivel: \(obj.eDetail?.last?.min_level ?? 0)"
             return nib
         }
         return ChainDouble()

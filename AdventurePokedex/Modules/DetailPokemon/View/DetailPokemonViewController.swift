@@ -39,8 +39,8 @@ class DetailPokemonViewController: UIViewController {
         return "\(types.first?.type?.name?.translate() ?? "") \(types.count == 2 ? "/ \(types.last?.type?.name?.translate() ?? "" )" : "" )"
     }
     
-    private func addSimpleChain(withState state: Bool = false, andDetailPokemonChain detailPokemonChain : DetailPokemonChain ) {
-        let evolutionView = state ?  ChainDouble.instantiate(with: detailPokemonChain) : ChainSimple.instantiate(with: detailPokemonChain )
+    private func addSimpleChain(withState state: Bool = false, trigger: Bool = false, andDetailPokemonChain detailPokemonChain : DetailPokemonChain ) {
+        let evolutionView = state ?  ChainDouble.instantiate(with: detailPokemonChain, evolTrade: trigger) : ChainSimple.instantiate(with: detailPokemonChain )
         evolutionView.frame = vwChainEvol.bounds
         self.vwChainEvol.addSubview(evolutionView)
         vwChainEvol.translatesAutoresizingMaskIntoConstraints = false
@@ -84,10 +84,10 @@ extension DetailPokemonViewController: DetailPokemon_PresenterToViewProtocol {
         }
     }
     
-    func updateInfo(withChain chain: DetailPokemonChain, andDetail: [String]) {
+    func updateInfo(withChain chain: DetailPokemonChain,trigger: String, andDetail: [String]) {
         DispatchQueue.main.async {
-            if let count = chain.name?.count, count > 0 {
-                self.addSimpleChain(withState: chain.name?.count == 3, andDetailPokemonChain: chain)
+            if let count = chain.name?.count, count > 0 { 
+                self.addSimpleChain(withState: chain.name?.count == 3, trigger: trigger == "trade", andDetailPokemonChain: chain)
             } else { self.addNoChain() }
         }
     }

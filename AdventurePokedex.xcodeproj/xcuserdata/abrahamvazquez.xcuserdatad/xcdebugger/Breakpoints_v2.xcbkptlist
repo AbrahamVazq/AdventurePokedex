@@ -7,47 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "30D9B4B8-4332-4FD3-B8D2-9321E7AACB52"
+            uuid = "5D567FC2-6276-4245-87DA-51BE55F734B5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdventurePokedex/Modules/DetailPokemon/View/DetailPokemonViewController.swift"
+            filePath = "AdventurePokedex/Services/PokeServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "updateInfo(withChain:andDetail:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "launchService(withCompletionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "30D9B4B8-4332-4FD3-B8D2-9321E7AACB52 - c3c2651f2db0331d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AdventurePokedex.DetailPokemonViewController.updateInfo(withChain: AdventurePokedex.DetailPokemonChain, andDetail: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "AdventurePokedex.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/View/DetailPokemonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88">
-               </Location>
-               <Location
-                  uuid = "30D9B4B8-4332-4FD3-B8D2-9321E7AACB52 - 3d26491324416863"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in AdventurePokedex.DetailPokemonViewController.updateInfo(withChain: AdventurePokedex.DetailPokemonChain, andDetail: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
-                  moduleName = "AdventurePokedex.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abrahamvazquez/Documents/Desarrollos/AdventurePokedex/AdventurePokedex/Modules/DetailPokemon/View/DetailPokemonViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,31 +27,30 @@
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3lL-Ph-ywm">
                             <rect key="frame" x="12" y="37.5" width="45" height="45"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="765-65-7tY"/>
                                 <constraint firstAttribute="height" constant="45" id="Yq7-Gz-hjD"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-sk-RQx">
-                            <rect key="frame" x="85" y="55" width="25" height="10"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-sk-RQx">
+                            <rect key="frame" x="85" y="50.5" width="25" height="19"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="10" id="ZdH-s7-Hgb"/>
+                                <constraint firstAttribute="height" constant="24" id="ZdH-s7-Hgb"/>
                                 <constraint firstAttribute="width" constant="25" id="iXP-qP-pTJ"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Atz-zu-su2">
-                            <rect key="frame" x="210.5" y="55" width="25" height="10"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <rect key="frame" x="210.5" y="50.5" width="25" height="19"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="10" id="oru-FM-rPg"/>
+                                <constraint firstAttribute="height" constant="24" id="oru-FM-rPg"/>
                                 <constraint firstAttribute="width" constant="25" id="tkj-Ao-f03"/>
                             </constraints>
+                            <imageReference key="image" image="arrow.right" catalog="system" renderingMode="original"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6DX-oS-p4W">
                             <rect key="frame" x="263" y="37.5" width="45" height="45"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="HuI-BI-AO8"/>
                                 <constraint firstAttribute="width" constant="45" id="eg5-1q-suO"/>
@@ -70,7 +70,6 @@
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MJK-tN-nxf">
                             <rect key="frame" x="137.5" y="37.5" width="45" height="45"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="bD3-nq-pgL"/>
                                 <constraint firstAttribute="width" constant="45" id="znQ-kd-Sh6"/>
@@ -128,7 +127,6 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="arrowToEvolve" destination="B4x-sk-RQx" id="2zA-yz-HQu"/>
                 <outlet property="imgPkmnOne" destination="3lL-Ph-ywm" id="6e5-Ph-aAX"/>
                 <outlet property="imgPkmnThree" destination="6DX-oS-p4W" id="3S5-qk-R5U"/>
                 <outlet property="imgPkmnTwo" destination="MJK-tN-nxf" id="ThU-HE-RpY"/>
@@ -143,11 +141,12 @@
         </view>
     </objects>
     <resources>
+        <image name="arrow.right" catalog="system" width="128" height="95"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
