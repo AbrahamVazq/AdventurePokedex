@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PokeTypesViewController" customModule="AdventurePokedex" customModuleProvider="target">
             <connections>
+                <outlet property="typesTableView" destination="Rdu-pW-nem" id="EoC-WN-VQY"/>
                 <outlet property="view" destination="Kjf-pF-Qls" id="iz5-Ia-OWB"/>
             </connections>
         </placeholder>
@@ -18,8 +19,20 @@
         <view contentMode="scaleToFill" id="Kjf-pF-Qls">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-pW-nem">
+                    <rect key="frame" x="8" y="32" width="304" height="528"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="CRG-dF-zQi"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CRG-dF-zQi" firstAttribute="bottom" secondItem="Rdu-pW-nem" secondAttribute="bottom" constant="8" id="2O8-Dd-al9"/>
+                <constraint firstItem="Rdu-pW-nem" firstAttribute="leading" secondItem="CRG-dF-zQi" secondAttribute="leading" constant="8" id="J2b-Xw-O2W"/>
+                <constraint firstItem="CRG-dF-zQi" firstAttribute="trailing" secondItem="Rdu-pW-nem" secondAttribute="trailing" constant="8" id="guj-bv-gi9"/>
+                <constraint firstItem="Rdu-pW-nem" firstAttribute="top" secondItem="CRG-dF-zQi" secondAttribute="top" constant="12" id="qdX-mN-aXZ"/>
+            </constraints>
             <point key="canvasLocation" x="229" y="-55"/>
         </view>
     </objects>

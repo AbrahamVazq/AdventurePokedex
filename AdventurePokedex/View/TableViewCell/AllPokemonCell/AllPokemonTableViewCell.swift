@@ -7,7 +7,6 @@ import UIKit
 class AllPokemonTableViewCell: UITableViewCell {
     //MARK: - O U T L E T S
     @IBOutlet weak var vwContainter: UIView! { didSet { self.vwContainter.cornerRadius = 12 }}
-    
     @IBOutlet weak var lblNamePokemon: UILabel!
     
     override func awakeFromNib() {

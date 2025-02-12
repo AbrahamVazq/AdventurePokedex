@@ -64,6 +64,9 @@
 		A4DB4AAF2D5D2B7900AD9D68 /* PokeTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB4AAB2D5D2B7900AD9D68 /* PokeTypesViewController.swift */; };
 		A4DB4AB02D5D2B7900AD9D68 /* PokeTypesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB4AA82D5D2B7900AD9D68 /* PokeTypesPresenter.swift */; };
 		A4DB4AB22D5D2BBF00AD9D68 /* PokeTypesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DB4AB12D5D2BBF00AD9D68 /* PokeTypesViewController.xib */; };
+		A4DB4AB92D5D2E7D00AD9D68 /* PokeTypesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB4AB82D5D2E7800AD9D68 /* PokeTypesViewControllerExtension.swift */; };
+		A4DB4ABC2D5D307600AD9D68 /* TypesCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DB4ABB2D5D307600AD9D68 /* TypesCellTableViewCell.xib */; };
+		A4DB4ABD2D5D307600AD9D68 /* TypesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB4ABA2D5D307600AD9D68 /* TypesCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +129,9 @@
 		A4DB4AAA2D5D2B7900AD9D68 /* PokeTypesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeTypesRouter.swift; sourceTree = "<group>"; };
 		A4DB4AAB2D5D2B7900AD9D68 /* PokeTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeTypesViewController.swift; sourceTree = "<group>"; };
 		A4DB4AB12D5D2BBF00AD9D68 /* PokeTypesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeTypesViewController.xib; sourceTree = "<group>"; };
+		A4DB4AB82D5D2E7800AD9D68 /* PokeTypesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeTypesViewControllerExtension.swift; sourceTree = "<group>"; };
+		A4DB4ABA2D5D307600AD9D68 /* TypesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesCellTableViewCell.swift; sourceTree = "<group>"; };
+		A4DB4ABB2D5D307600AD9D68 /* TypesCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypesCellTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +198,6 @@
 				A43FD17B2B15BC86007ADE79 /* Interactor */,
 				A43FD17A2B15BC81007ADE79 /* Presenter */,
 				A43FD17D2B15BCCC007ADE79 /* Protocols */,
-				A43FD1792B15BC79007ADE79 /* Entity */,
 				A43FD1782B15BC70007ADE79 /* Router */,
 			);
 			path = AllPokemon;
@@ -343,6 +348,7 @@
 		A43FD1722B15BB82007ADE79 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				A4DB4ABE2D5D312000AD9D68 /* TypesCell */,
 				A43FD1732B15BB93007ADE79 /* AllPokemonCell */,
 			);
 			path = TableViewCell;
@@ -363,13 +369,6 @@
 				A43FD1662B15B903007ADE79 /* AllPokemonRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		A43FD1792B15BC79007ADE79 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		A43FD17A2B15BC81007ADE79 /* Presenter */ = {
@@ -570,14 +569,64 @@
 		A4DB4A6A2D5A8D9800AD9D68 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				A4DB4AA72D5D2B7900AD9D68 /* PokeTypesInteractor.swift */,
-				A4DB4AA82D5D2B7900AD9D68 /* PokeTypesPresenter.swift */,
-				A4DB4AA92D5D2B7900AD9D68 /* PokeTypesProtocols.swift */,
-				A4DB4AAA2D5D2B7900AD9D68 /* PokeTypesRouter.swift */,
-				A4DB4AAB2D5D2B7900AD9D68 /* PokeTypesViewController.swift */,
-				A4DB4AB12D5D2BBF00AD9D68 /* PokeTypesViewController.xib */,
+				A4DB4AB72D5D2E4F00AD9D68 /* View */,
+				A4DB4AB62D5D2E4600AD9D68 /* Interactor */,
+				A4DB4AB52D5D2E3400AD9D68 /* Presenter */,
+				A4DB4AB42D5D2E2400AD9D68 /* Protocols */,
+				A4DB4AB32D5D2E1600AD9D68 /* Router */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		A4DB4AB32D5D2E1600AD9D68 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB4AAA2D5D2B7900AD9D68 /* PokeTypesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A4DB4AB42D5D2E2400AD9D68 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB4AA92D5D2B7900AD9D68 /* PokeTypesProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A4DB4AB52D5D2E3400AD9D68 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB4AA82D5D2B7900AD9D68 /* PokeTypesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A4DB4AB62D5D2E4600AD9D68 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB4AA72D5D2B7900AD9D68 /* PokeTypesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A4DB4AB72D5D2E4F00AD9D68 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB4AAB2D5D2B7900AD9D68 /* PokeTypesViewController.swift */,
+				A4DB4AB82D5D2E7800AD9D68 /* PokeTypesViewControllerExtension.swift */,
+				A4DB4AB12D5D2BBF00AD9D68 /* PokeTypesViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4DB4ABE2D5D312000AD9D68 /* TypesCell */ = {
+			isa = PBXGroup;
+			children = (
+				A4DB4ABA2D5D307600AD9D68 /* TypesCellTableViewCell.swift */,
+				A4DB4ABB2D5D307600AD9D68 /* TypesCellTableViewCell.xib */,
+			);
+			path = TypesCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -641,6 +690,7 @@
 				A405FCA42B158AB70088D8FA /* LaunchScreen.storyboard in Resources */,
 				A43013E92B5A3BAC00CFDD85 /* PokemonSpriteCollectionViewCell.xib in Resources */,
 				A405FCA12B158AB70088D8FA /* Assets.xcassets in Resources */,
+				A4DB4ABC2D5D307600AD9D68 /* TypesCellTableViewCell.xib in Resources */,
 				A43181112B7ACA5700E2C65E /* Main.storyboard in Resources */,
 				A46699962C4F950F00D991B5 /* NoChain.xib in Resources */,
 				A43FD1702B15BA6E007ADE79 /* AllPokemonViewController.xib in Resources */,
@@ -660,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43181162B7AD60100E2C65E /* ViewController.swift in Sources */,
+				A4DB4AB92D5D2E7D00AD9D68 /* PokeTypesViewControllerExtension.swift in Sources */,
 				A45783D82D40768F00852886 /* PokeTabBarController.swift in Sources */,
 				A43013EC2B5A400C00CFDD85 /* DetailPokemonViewControllerExtension.swift in Sources */,
 				A49CB1002BEB493F00F4293E /* ChainDouble.swift in Sources */,
@@ -689,6 +740,7 @@
 				A43181082B7AAFCF00E2C65E /* Optional+Extension.swift in Sources */,
 				A43013D82B5A382D00CFDD85 /* DetailPokemonPresenter.swift in Sources */,
 				A43FD1762B15BBAC007ADE79 /* AllPokemonTableViewCell.swift in Sources */,
+				A4DB4ABD2D5D307600AD9D68 /* TypesCellTableViewCell.swift in Sources */,
 				A43013DB2B5A382D00CFDD85 /* DetailPokemonProtocols.swift in Sources */,
 				A43013E82B5A3BAC00CFDD85 /* PokemonSpriteCollectionViewCell.swift in Sources */,
 				A43FD16A2B15B903007ADE79 /* AllPokemonPresenter.swift in Sources */,

@@ -25,8 +25,11 @@ final class PokeTabBarController: UITabBarController {
     func setUpViewControllers(){
         viewControllers = [
             createNavController(for:AllPokemonRouter.createModule(),
-                                title:NSLocalizedString("Home", comment: ""),
-                                image:UIImage(systemName: "magnifyingglass.circle") ?? UIImage())
+                                title:NSLocalizedString("Pokemón", comment: ""),
+                                image:UIImage(systemName: "magnifyingglass.circle") ?? UIImage()),
+            createNavController(for:PokeTypesRouter.createModule(),
+                                title:NSLocalizedString("Tipos", comment: ""),
+                                image:UIImage(systemName: "list.clipboard") ?? UIImage())
         ]
     }
 
