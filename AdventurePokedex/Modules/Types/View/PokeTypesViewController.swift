@@ -10,11 +10,13 @@ class PokeTypesViewController: UIViewController {
     @IBOutlet weak var typesTableView : UITableView!
 
     var presenter: PokeTypes_ViewToPresenterProtocol?
+    var types: [TypePokemonResults] = []
 
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTypeTable()
+        self.presenter?.goToTypes()
     }
     
     private func configureTypeTable() {
@@ -29,4 +31,16 @@ class PokeTypesViewController: UIViewController {
 
 // MARK: - P R E S E N T E R · T O · V I E W
 extension PokeTypesViewController: PokeTypes_PresenterToViewProtocol {
+    func updateInfo(with pokemonTypes: TypesPokemonResponse) {
+        guard let types = pokemonTypes.results else { return }
+        DispatchQueue.main.async {
+            self.types = types
+            self.typesTableView.reloadData()
+        }
+    }
+    
+    func updateErrorService(withError error: NSError) {
+        self.showAlert(andMessage: error.localizedDescription)
+    }
+    
 }

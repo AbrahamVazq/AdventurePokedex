@@ -9,6 +9,7 @@ enum Paths {
     case getSprites(fromId:String)
     case getSpecie(fomId:String)
     case getChainEvolution(fromId:String)
+    case getTypes
     //    case path3(param1: <#Type#>, param2: <#Type#>)
     
     func getPath() -> String {
@@ -25,6 +26,8 @@ enum Paths {
         case .getChainEvolution(fromId: let id):
             return "/api/v2/evolution-chain/\(id)/"
   
+        case .getTypes:
+            return "/api/v2/type/"
   //    case .path3(param1: let variableUno, param2: let variableDos):
   //        return "path/param=\(variableUno),param2=\(variableDos)"
             

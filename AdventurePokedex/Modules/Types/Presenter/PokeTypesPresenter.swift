@@ -6,14 +6,25 @@
 import Foundation
 
 class PokeTypesPresenter: PokeTypes_ViewToPresenterProtocol {
-    
     weak var view: PokeTypes_PresenterToViewProtocol?
     var interactor: PokeTypes_PresenterToInteractorProtocol?
     var router: PokeTypes_PresenterToRouterProtocol?
+    
+    func goToTypes() {
+        self.interactor?.goToTypeToInteractor()
+    }
     
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
 extension PokeTypesPresenter: PokeTypes_InteractorToPresenterProtocol {
+    func getToTypesFromInteractor(with pokemonTypes: TypesPokemonResponse) {
+        self.view?.updateInfo(with: pokemonTypes)
+    }
+    
+    func getErrorFromInteractor(withError error: NSError) {
+        self.view?.updateErrorService(withError: error)
+    }
+    
 
 }

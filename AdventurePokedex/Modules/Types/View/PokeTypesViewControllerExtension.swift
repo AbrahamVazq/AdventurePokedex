@@ -4,20 +4,16 @@
 
 import UIKit
 
-extension PokeTypesViewController: UITableViewDelegate {
-    
-}
+extension PokeTypesViewController: UITableViewDelegate {}
 
 extension PokeTypesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return types.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = typesTableView.dequeueCell(withType: TypesCellTableViewCell.self, for: indexPath) as? TypesCellTableViewCell ?? TypesCellTableViewCell()
-        cell.setUpCell(with: "Tipo Pokemon")
+        cell.setUpCell(with: self.types[indexPath.row])
         return cell
     }
-    
-    
 }

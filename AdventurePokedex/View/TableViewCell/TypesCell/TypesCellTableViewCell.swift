@@ -18,7 +18,7 @@ class TypesCellTableViewCell: UITableViewCell {
     }
     
     //MARK: - S E T · U P
-    public func setUpCell(with type: String) {
-        self.lblType.text = type
+    public func setUpCell(with type: TypePokemonResults) {
+        self.lblType.text = type.name?.translate()
     }
 }

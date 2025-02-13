@@ -71,6 +71,8 @@ extension String {
             return "Dragon"
         case "dark":
             return "Siniestro"
+        case "stellar":
+            return "Astral"
         default:
             return "Unknow"
         }
