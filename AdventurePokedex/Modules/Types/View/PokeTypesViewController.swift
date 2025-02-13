@@ -15,12 +15,12 @@ class PokeTypesViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Tipos"
         self.configureTypeTable()
         self.presenter?.goToTypes()
     }
     
     private func configureTypeTable() {
-        self.title = "Tipos"
         self.typesTableView.delegate = self
         self.typesTableView.dataSource = self
         self.typesTableView.separatorStyle = .none

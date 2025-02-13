@@ -14,6 +14,12 @@ class PokeTypesPresenter: PokeTypes_ViewToPresenterProtocol {
         self.interactor?.goToTypeToInteractor()
     }
     
+    func didSelect(withType type: TypePokemonResults) {
+        if let view = view {
+            self.router?.goToDetail(withType: type, andView: view)
+        }
+    }
+    
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R

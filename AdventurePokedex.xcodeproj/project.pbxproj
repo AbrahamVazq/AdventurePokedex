@@ -68,6 +68,13 @@
 		A4DB4AB92D5D2E7D00AD9D68 /* PokeTypesViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB4AB82D5D2E7800AD9D68 /* PokeTypesViewControllerExtension.swift */; };
 		A4DB4ABC2D5D307600AD9D68 /* TypesCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DB4ABB2D5D307600AD9D68 /* TypesCellTableViewCell.xib */; };
 		A4DB4ABD2D5D307600AD9D68 /* TypesCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DB4ABA2D5D307600AD9D68 /* TypesCellTableViewCell.swift */; };
+		A4DF5FA42D5E456D00FE35FB /* TypeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FA32D5E456D00FE35FB /* TypeDetailViewController.swift */; };
+		A4DF5FA52D5E456D00FE35FB /* TypeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5F9F2D5E456D00FE35FB /* TypeDetailInteractor.swift */; };
+		A4DF5FA62D5E456D00FE35FB /* TypeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FA22D5E456D00FE35FB /* TypeDetailRouter.swift */; };
+		A4DF5FA72D5E456D00FE35FB /* TypeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FA02D5E456D00FE35FB /* TypeDetailPresenter.swift */; };
+		A4DF5FA82D5E456D00FE35FB /* TypeDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FA12D5E456D00FE35FB /* TypeDetailProtocols.swift */; };
+		A4DF5FB02D5E492300FE35FB /* TypesDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FAF2D5E491D00FE35FB /* TypesDetailResponse.swift */; };
+		A4DF5FB22D5E4C4500FE35FB /* TypeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DF5FB12D5E4C4500FE35FB /* TypeDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +141,13 @@
 		A4DB4AB82D5D2E7800AD9D68 /* PokeTypesViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeTypesViewControllerExtension.swift; sourceTree = "<group>"; };
 		A4DB4ABA2D5D307600AD9D68 /* TypesCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesCellTableViewCell.swift; sourceTree = "<group>"; };
 		A4DB4ABB2D5D307600AD9D68 /* TypesCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypesCellTableViewCell.xib; sourceTree = "<group>"; };
+		A4DF5F9F2D5E456D00FE35FB /* TypeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailInteractor.swift; sourceTree = "<group>"; };
+		A4DF5FA02D5E456D00FE35FB /* TypeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailPresenter.swift; sourceTree = "<group>"; };
+		A4DF5FA12D5E456D00FE35FB /* TypeDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailProtocols.swift; sourceTree = "<group>"; };
+		A4DF5FA22D5E456D00FE35FB /* TypeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailRouter.swift; sourceTree = "<group>"; };
+		A4DF5FA32D5E456D00FE35FB /* TypeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailViewController.swift; sourceTree = "<group>"; };
+		A4DF5FAF2D5E491D00FE35FB /* TypesDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesDetailResponse.swift; sourceTree = "<group>"; };
+		A4DF5FB12D5E4C4500FE35FB /* TypeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +199,7 @@
 		A405FCAB2B158B8F0088D8FA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A4DF5F9E2D5E455600FE35FB /* TypeDetail */,
 				A4DB4A6A2D5A8D9800AD9D68 /* Types */,
 				A45783D62D40764200852886 /* PokeTabBarController */,
 				A42CFF322B5A36F1008DDB98 /* DetailPokemon */,
@@ -494,6 +509,7 @@
 		A43FD19B2B15C893007ADE79 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				A4DF5FAE2D5E48FA00FE35FB /* TypesDetailReponse */,
 				A465AE352D5DC2F000FE9BBE /* TypesPokemonResponse */,
 				A43181172B7AE7EA00E2C65E /* ChainEvolutionResponse */,
 				A43181122B7AD23500E2C65E /* SpeciesPokemonResponse */,
@@ -640,6 +656,67 @@
 			path = TypesCell;
 			sourceTree = "<group>";
 		};
+		A4DF5F9E2D5E455600FE35FB /* TypeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A4DF5FAD2D5E459D00FE35FB /* View */,
+				A4DF5FAC2D5E459600FE35FB /* Interactor */,
+				A4DF5FAB2D5E458D00FE35FB /* Presenter */,
+				A4DF5FAA2D5E458400FE35FB /* Protocols */,
+				A4DF5FA92D5E457300FE35FB /* Router */,
+			);
+			path = TypeDetail;
+			sourceTree = "<group>";
+		};
+		A4DF5FA92D5E457300FE35FB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A4DF5FA22D5E456D00FE35FB /* TypeDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A4DF5FAA2D5E458400FE35FB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A4DF5FA12D5E456D00FE35FB /* TypeDetailProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A4DF5FAB2D5E458D00FE35FB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A4DF5FA02D5E456D00FE35FB /* TypeDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A4DF5FAC2D5E459600FE35FB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A4DF5F9F2D5E456D00FE35FB /* TypeDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A4DF5FAD2D5E459D00FE35FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4DF5FA32D5E456D00FE35FB /* TypeDetailViewController.swift */,
+				A4DF5FB12D5E4C4500FE35FB /* TypeDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4DF5FAE2D5E48FA00FE35FB /* TypesDetailReponse */ = {
+			isa = PBXGroup;
+			children = (
+				A4DF5FAF2D5E491D00FE35FB /* TypesDetailResponse.swift */,
+			);
+			path = TypesDetailReponse;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -706,6 +783,7 @@
 				A46699962C4F950F00D991B5 /* NoChain.xib in Resources */,
 				A43FD1702B15BA6E007ADE79 /* AllPokemonViewController.xib in Resources */,
 				A43FD1772B15BBAC007ADE79 /* AllPokemonTableViewCell.xib in Resources */,
+				A4DF5FB22D5E4C4500FE35FB /* TypeDetailViewController.xib in Resources */,
 				A47E942F2B702A560049E311 /* DetailPokemonViewController.xib in Resources */,
 				A431810F2B7AC3FF00E2C65E /* ChainSimple.xib in Resources */,
 				A4DB4AB22D5D2BBF00AD9D68 /* PokeTypesViewController.xib in Resources */,
@@ -726,6 +804,7 @@
 				A43013EC2B5A400C00CFDD85 /* DetailPokemonViewControllerExtension.swift in Sources */,
 				A49CB1002BEB493F00F4293E /* ChainDouble.swift in Sources */,
 				A47E94372B7096E70049E311 /* Array+Extension.swift in Sources */,
+				A4DF5FB02D5E492300FE35FB /* TypesDetailResponse.swift in Sources */,
 				A43013DA2B5A382D00CFDD85 /* DetailPokemonViewController.swift in Sources */,
 				A43FD1802B15BD0B007ADE79 /* AllPokemonViewControllerExtension.swift in Sources */,
 				A47E943A2B70AF600049E311 /* Int+Extension.swift in Sources */,
@@ -760,6 +839,11 @@
 				A4DB4AAC2D5D2B7900AD9D68 /* PokeTypesRouter.swift in Sources */,
 				A4DB4AAD2D5D2B7900AD9D68 /* PokeTypesInteractor.swift in Sources */,
 				A4DB4AAE2D5D2B7900AD9D68 /* PokeTypesProtocols.swift in Sources */,
+				A4DF5FA42D5E456D00FE35FB /* TypeDetailViewController.swift in Sources */,
+				A4DF5FA52D5E456D00FE35FB /* TypeDetailInteractor.swift in Sources */,
+				A4DF5FA62D5E456D00FE35FB /* TypeDetailRouter.swift in Sources */,
+				A4DF5FA72D5E456D00FE35FB /* TypeDetailPresenter.swift in Sources */,
+				A4DF5FA82D5E456D00FE35FB /* TypeDetailProtocols.swift in Sources */,
 				A4DB4AAF2D5D2B7900AD9D68 /* PokeTypesViewController.swift in Sources */,
 				A4DB4AB02D5D2B7900AD9D68 /* PokeTypesPresenter.swift in Sources */,
 				A405FC9A2B158AB50088D8FA /* SceneDelegate.swift in Sources */,

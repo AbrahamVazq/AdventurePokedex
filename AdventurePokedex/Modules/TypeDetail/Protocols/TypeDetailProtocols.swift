@@ -1,6 +1,6 @@
-//  PokeTypesProtocols.swift
+//  TypeDetailProtocols.swift
 //  AdventurePokedex
-//  Created by Abraham Vazquez on 12/02/25.
+//  Created by Abraham Vazquez on 13/02/25.
 //  ViperTemplate v.0.0.1 - (2023, NS-Bionick Development Team)
 
 import Foundation
@@ -21,15 +21,10 @@ import Foundation
  */
 
 // MARK: VIEW -> PRESENTER
-protocol PokeTypes_ViewToPresenterProtocol: AnyObject {
-	var view: PokeTypes_PresenterToViewProtocol? { get set }
-	var interactor: PokeTypes_PresenterToInteractorProtocol? { get set }
-	var router: PokeTypes_PresenterToRouterProtocol? { get set }
-    
-    func goToTypes()
-    
-    func didSelect(withType type: TypePokemonResults) 
-    
+protocol TypeDetail_ViewToPresenterProtocol: AnyObject {
+	var view: TypeDetail_PresenterToViewProtocol? { get set }
+	var interactor: TypeDetail_PresenterToInteractorProtocol? { get set }
+	var router: TypeDetail_PresenterToRouterProtocol? { get set }
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -51,11 +46,8 @@ protocol PokeTypes_ViewToPresenterProtocol: AnyObject {
  */
 
 // MARK: PRESENTER -> INTERACTOR
-protocol PokeTypes_PresenterToInteractorProtocol: AnyObject {
-    var presenter: PokeTypes_InteractorToPresenterProtocol? { get set }
-    
-    func goToTypeToInteractor()
-    
+protocol TypeDetail_PresenterToInteractorProtocol: AnyObject {
+    var presenter: TypeDetail_InteractorToPresenterProtocol? { get set }
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -77,12 +69,7 @@ protocol PokeTypes_PresenterToInteractorProtocol: AnyObject {
  */
 
 // MARK: INTERACTOR -> PRESENTER
-protocol PokeTypes_InteractorToPresenterProtocol: AnyObject {
-    
-    func getToTypesFromInteractor(with pokemonTypes: TypesPokemonResponse)
-    
-    func getErrorFromInteractor(withError error: NSError)
-    
+protocol TypeDetail_InteractorToPresenterProtocol: AnyObject {
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -98,12 +85,8 @@ protocol PokeTypes_InteractorToPresenterProtocol: AnyObject {
  */
 
 // MARK: PRESENTER -> VIEW
-protocol PokeTypes_PresenterToViewProtocol: AnyObject {
-    var presenter: PokeTypes_ViewToPresenterProtocol? { get set }
-    
-    func updateInfo(with pokemonTypes: TypesPokemonResponse)
-    
-    func updateErrorService(withError error: NSError)
+protocol TypeDetail_PresenterToViewProtocol: AnyObject {
+    var presenter: TypeDetail_ViewToPresenterProtocol? { get set }
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -118,8 +101,5 @@ protocol PokeTypes_PresenterToViewProtocol: AnyObject {
  */
 
 // MARK: PRESENTER -> ROUTER
-protocol PokeTypes_PresenterToRouterProtocol: AnyObject {
-    
-    func goToDetail(withType type: TypePokemonResults, andView view: PokeTypes_PresenterToViewProtocol)
-    
+protocol TypeDetail_PresenterToRouterProtocol: AnyObject {
 }

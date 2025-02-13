@@ -4,7 +4,12 @@
 
 import UIKit
 
-extension PokeTypesViewController: UITableViewDelegate {}
+extension PokeTypesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let typeTapped = types[indexPath.row]
+        self.presenter?.didSelect(withType: typeTapped)
+    }
+}
 
 extension PokeTypesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
