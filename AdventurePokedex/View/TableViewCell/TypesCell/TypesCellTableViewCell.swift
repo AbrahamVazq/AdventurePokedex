@@ -18,7 +18,21 @@ class TypesCellTableViewCell: UITableViewCell {
     }
     
     //MARK: - S E T · U P
-    public func setUpCell(with type: TypePokemonResults) {
+    public func setUpCell(with type: TypePokemonResults, andStyle style: Int = 0) {
         self.lblType.text = type.name?.translate()
+        if style != 0 {
+            switch style {
+            case 1:
+                viewTypeCell.backgroundColor = .red
+            case 2:
+                viewTypeCell.backgroundColor = .green
+            case 3:
+                viewTypeCell.backgroundColor = .orange
+            case 4:
+                viewTypeCell.backgroundColor = .lightGray
+            default:
+                break
+            }
+        }
     }
 }

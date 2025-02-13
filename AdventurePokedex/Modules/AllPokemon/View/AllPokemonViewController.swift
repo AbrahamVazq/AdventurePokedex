@@ -81,5 +81,9 @@ extension AllPokemonViewController: AllPokemon_PresenterToViewProtocol {
         }
     }
     
-    func update(with error: Error) { self.showAlert(andMessage: error.localizedDescription) }
+    func update(with error: Error) {
+        DispatchQueue.main.async {
+            self.showAlert(andMessage: error.localizedDescription)
+        }
+    }
 }

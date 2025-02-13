@@ -5,13 +5,13 @@
 import Foundation
 
 struct TypesPokemonResponse : Codable {
-    let count : Int?
-    let next : String?
-    let previous : String?
-    let results : [TypePokemonResults]?
+    var count : Int?
+    var next : String?
+    var previous : String?
+    var results : [TypePokemonResults]?
 }
 
 struct TypePokemonResults : Codable {
-    let name : String?
-    let url : String?
+    var name : String?
+    var url : String?
 }

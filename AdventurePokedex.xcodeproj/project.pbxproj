@@ -75,6 +75,7 @@
 		A4DF5FA82D5E456D00FE35FB /* TypeDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FA12D5E456D00FE35FB /* TypeDetailProtocols.swift */; };
 		A4DF5FB02D5E492300FE35FB /* TypesDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FAF2D5E491D00FE35FB /* TypesDetailResponse.swift */; };
 		A4DF5FB22D5E4C4500FE35FB /* TypeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DF5FB12D5E4C4500FE35FB /* TypeDetailViewController.xib */; };
+		A4DF5FB42D5E717A00FE35FB /* TypeDetailViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF5FB32D5E717500FE35FB /* TypeDetailViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 		A4DF5FA32D5E456D00FE35FB /* TypeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailViewController.swift; sourceTree = "<group>"; };
 		A4DF5FAF2D5E491D00FE35FB /* TypesDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesDetailResponse.swift; sourceTree = "<group>"; };
 		A4DF5FB12D5E4C4500FE35FB /* TypeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeDetailViewController.xib; sourceTree = "<group>"; };
+		A4DF5FB32D5E717500FE35FB /* TypeDetailViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDetailViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,6 +706,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DF5FA32D5E456D00FE35FB /* TypeDetailViewController.swift */,
+				A4DF5FB32D5E717500FE35FB /* TypeDetailViewControllerExtension.swift */,
 				A4DF5FB12D5E4C4500FE35FB /* TypeDetailViewController.xib */,
 			);
 			path = View;
@@ -841,6 +844,7 @@
 				A4DB4AAE2D5D2B7900AD9D68 /* PokeTypesProtocols.swift in Sources */,
 				A4DF5FA42D5E456D00FE35FB /* TypeDetailViewController.swift in Sources */,
 				A4DF5FA52D5E456D00FE35FB /* TypeDetailInteractor.swift in Sources */,
+				A4DF5FB42D5E717A00FE35FB /* TypeDetailViewControllerExtension.swift in Sources */,
 				A4DF5FA62D5E456D00FE35FB /* TypeDetailRouter.swift in Sources */,
 				A4DF5FA72D5E456D00FE35FB /* TypeDetailPresenter.swift in Sources */,
 				A4DF5FA82D5E456D00FE35FB /* TypeDetailProtocols.swift in Sources */,

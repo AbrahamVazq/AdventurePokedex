@@ -40,7 +40,9 @@ extension PokeTypesViewController: PokeTypes_PresenterToViewProtocol {
     }
     
     func updateErrorService(withError error: NSError) {
-        self.showAlert(andMessage: error.localizedDescription)
+        DispatchQueue.main.async {
+            self.showAlert(andMessage: error.localizedDescription)
+        }
     }
     
 }

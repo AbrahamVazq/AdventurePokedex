@@ -25,6 +25,9 @@ protocol TypeDetail_ViewToPresenterProtocol: AnyObject {
 	var view: TypeDetail_PresenterToViewProtocol? { get set }
 	var interactor: TypeDetail_PresenterToInteractorProtocol? { get set }
 	var router: TypeDetail_PresenterToRouterProtocol? { get set }
+    
+    func goToTypeDetail(with idType: String)
+    
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -48,6 +51,9 @@ protocol TypeDetail_ViewToPresenterProtocol: AnyObject {
 // MARK: PRESENTER -> INTERACTOR
 protocol TypeDetail_PresenterToInteractorProtocol: AnyObject {
     var presenter: TypeDetail_InteractorToPresenterProtocol? { get set }
+    
+    func goToTypeDetailToInteractor(with idType: String)
+    
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -70,6 +76,10 @@ protocol TypeDetail_PresenterToInteractorProtocol: AnyObject {
 
 // MARK: INTERACTOR -> PRESENTER
 protocol TypeDetail_InteractorToPresenterProtocol: AnyObject {
+    
+    func getToTypeDetailFromInteractor(withDetail detail: TypesDetailResponse)
+    
+    func getErrorFromInteractor(withError error: NSError)
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -87,6 +97,11 @@ protocol TypeDetail_InteractorToPresenterProtocol: AnyObject {
 // MARK: PRESENTER -> VIEW
 protocol TypeDetail_PresenterToViewProtocol: AnyObject {
     var presenter: TypeDetail_ViewToPresenterProtocol? { get set }
+    
+    func updateView(withDetail detail: TypesDetailResponse)
+    
+    func updateErrorService(withError error: NSError)
+    
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

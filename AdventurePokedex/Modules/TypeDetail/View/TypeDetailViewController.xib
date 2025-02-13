@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TypeDetailViewController" customModule="AdventurePokedex" customModuleProvider="target">
             <connections>
+                <outlet property="tableDetailType" destination="NK3-Br-FuB" id="hFe-8g-mcf"/>
                 <outlet property="view" destination="0zf-Mh-JGW" id="EXb-Tn-aZM"/>
             </connections>
         </placeholder>
@@ -18,8 +19,20 @@
         <view contentMode="scaleToFill" id="0zf-Mh-JGW">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NK3-Br-FuB">
+                    <rect key="frame" x="8" y="32" width="304" height="528"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="U68-yo-LvR"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="NK3-Br-FuB" firstAttribute="top" secondItem="U68-yo-LvR" secondAttribute="top" constant="12" id="8L3-Nb-kCR"/>
+                <constraint firstItem="U68-yo-LvR" firstAttribute="bottom" secondItem="NK3-Br-FuB" secondAttribute="bottom" constant="8" id="ACJ-Yx-aH2"/>
+                <constraint firstItem="U68-yo-LvR" firstAttribute="trailing" secondItem="NK3-Br-FuB" secondAttribute="trailing" constant="8" id="kz0-IQ-gYJ"/>
+                <constraint firstItem="NK3-Br-FuB" firstAttribute="leading" secondItem="U68-yo-LvR" secondAttribute="leading" constant="8" id="r6w-z3-Jpt"/>
+            </constraints>
             <point key="canvasLocation" x="138" y="20"/>
         </view>
     </objects>
