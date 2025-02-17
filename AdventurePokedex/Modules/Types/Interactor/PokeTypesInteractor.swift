@@ -11,7 +11,7 @@ class PokeTypesInteractor: PokeTypes_PresenterToInteractorProtocol {
     private var strHost: String = "pokeapi.co"
     
     func goToTypeToInteractor() {
-        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getTypes.getPath()))
+        let service: NetworkAPIProtocol = PokeServicesManager(urlConfiguration: PokeURLConfiguration(strMethod: strMethod, strHost: strHost, path: Paths.getAllTypes.getPath()))
         service.launchService { [weak self] (result: Result<TypesPokemonResponse, ErrorNetwork>) in
             switch result {
             case .success(let success):

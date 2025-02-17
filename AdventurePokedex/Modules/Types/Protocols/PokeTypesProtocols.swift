@@ -28,7 +28,7 @@ protocol PokeTypes_ViewToPresenterProtocol: AnyObject {
     
     func goToTypes()
     
-    func didSelect(withType type: TypePokemonResults) 
+    func didSelect(withType type: PokeGeneral)
     
 }
 
@@ -120,6 +120,6 @@ protocol PokeTypes_PresenterToViewProtocol: AnyObject {
 // MARK: PRESENTER -> ROUTER
 protocol PokeTypes_PresenterToRouterProtocol: AnyObject {
     
-    func goToDetail(withType type: TypePokemonResults, andView view: PokeTypes_PresenterToViewProtocol)
+    func goToDetail(withType type: PokeGeneral, andView view: PokeTypes_PresenterToViewProtocol)
     
 }

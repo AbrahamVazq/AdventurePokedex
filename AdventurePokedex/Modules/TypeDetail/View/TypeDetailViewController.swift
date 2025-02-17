@@ -10,7 +10,7 @@ class TypeDetailViewController: UIViewController {
     @IBOutlet weak var tableDetailType : UITableView!
     
     var presenter: TypeDetail_ViewToPresenterProtocol?
-    var type: TypePokemonResults?
+    var type: PokeGeneral?
     var damageRelation: DamageRelations?
 
     // MARK: Lifecycle

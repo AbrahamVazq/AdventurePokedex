@@ -10,7 +10,7 @@ class PokeTypesViewController: UIViewController {
     @IBOutlet weak var typesTableView : UITableView!
 
     var presenter: PokeTypes_ViewToPresenterProtocol?
-    var types: [TypePokemonResults] = []
+    var types: [PokeGeneral] = []
 
     // MARK: Lifecycle
     override func viewDidLoad() {

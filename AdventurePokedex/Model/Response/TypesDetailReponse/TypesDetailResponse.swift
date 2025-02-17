@@ -15,10 +15,10 @@ struct TypesDetailResponse : Codable {
 }
 
 struct DamageRelations : Codable {
-    var double_damage_from : [TypePokemonResults]?
-    var double_damage_to : [TypePokemonResults]?
-    var half_damage_from : [TypePokemonResults]?
-    var half_damage_to : [TypePokemonResults]?
-    var no_damage_from : [TypePokemonResults]?
-    var no_damage_to : [TypePokemonResults]?
+    var double_damage_from : [PokeGeneral]?
+    var double_damage_to : [PokeGeneral]?
+    var half_damage_from : [PokeGeneral]?
+    var half_damage_to : [PokeGeneral]?
+    var no_damage_from : [PokeGeneral]?
+    var no_damage_to : [PokeGeneral]?
 }

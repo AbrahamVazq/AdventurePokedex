@@ -7,7 +7,7 @@ import UIKit
 
 class TypeDetailRouter {
 	
-    static func createModule(withIdType type: TypePokemonResults) -> UIViewController {
+    static func createModule(withIdType type: PokeGeneral) -> UIViewController {
         
         let view = TypeDetailViewController()
         let presenter = TypeDetailPresenter()

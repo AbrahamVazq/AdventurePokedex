@@ -78,7 +78,7 @@ extension TypeDetailViewController: UITableViewDataSource {
                 cell.setUpCell(with: types[indexPath.row], andStyle: 4)
             }
         default:
-            var damateEmpty: TypePokemonResults = TypePokemonResults()
+            var damateEmpty: PokeGeneral = PokeGeneral()
             damateEmpty.name = "No Aplica"
             cell.setUpCell(with: damateEmpty)
         }

@@ -25,7 +25,7 @@ class PokeTypesRouter {
 }
 
 extension PokeTypesRouter: PokeTypes_PresenterToRouterProtocol {
-    func goToDetail(withType type: TypePokemonResults, andView view: PokeTypes_PresenterToViewProtocol) {
+    func goToDetail(withType type: PokeGeneral, andView view: PokeTypes_PresenterToViewProtocol) {
         if let view = view as? PokeTypesViewController {
             let vc = TypeDetailRouter.createModule(withIdType: type)
             view.navigationController?.pushViewController(vc, animated: true)

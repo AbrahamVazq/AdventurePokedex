@@ -29,7 +29,10 @@ final class PokeTabBarController: UITabBarController {
                                 image:UIImage(systemName: "magnifyingglass.circle") ?? UIImage()),
             createNavController(for:PokeTypesRouter.createModule(),
                                 title:NSLocalizedString("Tipos", comment: ""),
-                                image:UIImage(systemName: "list.clipboard") ?? UIImage())
+                                image:UIImage(systemName: "list.clipboard") ?? UIImage()),
+            createNavController(for:AllRegionRouter.createModule(),
+                                title:NSLocalizedString("Tipos", comment: ""),
+                                image:UIImage(systemName: "globe") ?? UIImage())
         ]
     }
 
