@@ -5,7 +5,11 @@
 import UIKit
 
 extension AllRegionViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.presenter?.didSelect(withRegion: Array().returnArraysRegion(fromId: indexPath.row))
+//        let idRegion = arrAllRegions[indexPath.row].url
+        self.presenter?.didSelect(withRegion: indexPath.row + 1, orPokeRegion: indexPath.row + 1 == 9 ? arrAllRegions[indexPath.row] : PokeGeneral())
+    }
 }
 
 extension AllRegionViewController: UITableViewDataSource {
@@ -18,6 +22,4 @@ extension AllRegionViewController: UITableViewDataSource {
         cell.setUpCell(with: arrAllRegions[indexPath.row])
         return cell
     }
-    
-    
 }

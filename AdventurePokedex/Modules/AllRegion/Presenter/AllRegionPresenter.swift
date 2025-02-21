@@ -14,11 +14,15 @@ class AllRegionPresenter: AllRegion_ViewToPresenterProtocol {
         self.interactor?.goToTypesToInteractor()
     }
     
+    func didSelect(withRegion idRegion: Int, orPokeRegion region: PokeGeneral) {
+        if let view = view {
+            self.router?.goToChooseRegion(withId: idRegion, orPokeRegion: region, andview: view)
+        }
+    }
 }
 
 // MARK: - I N T E R A C T O R · T O · P R E S E N T E R
 extension AllRegionPresenter: AllRegion_InteractorToPresenterProtocol {
-    
     func getToAllRegionFromInteractor(withRegions regions: AllRegionResponse) {
         self.view?.updateView(WithRegions: regions)
     }

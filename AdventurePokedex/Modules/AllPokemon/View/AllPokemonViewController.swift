@@ -33,7 +33,7 @@ class AllPokemonViewController: UIViewController {
         
         if !(arrAllPokemon.count != 0) {
             presenter?.viewDidLoad()
-        }else { self.view.activityStopAnimating() }
+        } else { self.view.activityStopAnimating() }
     }
     
     //MARK: - S E T · U P · V I E W

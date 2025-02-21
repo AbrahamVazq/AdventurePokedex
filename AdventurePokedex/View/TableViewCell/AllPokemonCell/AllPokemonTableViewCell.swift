@@ -23,4 +23,8 @@ class AllPokemonTableViewCell: UITableViewCell {
         self.lblNamePokemon.text = "#\(pokemon?.entry_number ?? 0) - \(pokemon?.pokemon_species?.name?.capitalized ?? "")"
     }
     
+    public func setUpCell(with pokemon: Pokemon_entries?) {
+        self.vwContainter.cornerRadius = 5.0
+        self.lblNamePokemon.text = "#\(pokemon?.entry_number ?? 0) - \(pokemon?.pokemon_species?.name?.capitalized ?? "")"
+    }
 }

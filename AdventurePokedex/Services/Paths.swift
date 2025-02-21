@@ -12,6 +12,7 @@ enum Paths {
     case getAllTypes
     case getTypeDetial(fromId:String)
     case getAllRegions
+    case getRegionDetail(fromId:String)
     //    case path3(param1: <#Type#>, param2: <#Type#>)
     
     func getPath() -> String {
@@ -36,6 +37,9 @@ enum Paths {
             
         case .getAllRegions:
             return "/api/v2/region/"
+            
+        case .getRegionDetail(fromId: let id):
+            return "/api/v2/pokedex/\(id)/"
             
   //    case .path3(param1: let variableUno, param2: let variableDos):
   //        return "path/param=\(variableUno),param2=\(variableDos)"

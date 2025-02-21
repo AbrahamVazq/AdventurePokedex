@@ -1,6 +1,8 @@
-//  AllPokemonProtocols.swift
+//  ChoosePokedexProtocols.swift
 //  AdventurePokedex
-//  Created by Abraham Vazquez on 27/11/23.
+//
+//  Created by Abraham Vazquez on 21/02/25.
+//  
 //  ViperTemplate v.0.0.1 - (2023, NS-Bionick Development Team)
 
 import Foundation
@@ -21,13 +23,10 @@ import Foundation
  */
 
 // MARK: VIEW -> PRESENTER
-protocol AllPokemon_ViewToPresenterProtocol: AnyObject {
-	var view: AllPokemon_PresenterToViewProtocol? { get set }
-	var interactor: AllPokemon_PresenterToInteractorProtocol? { get set }
-	var router: AllPokemon_PresenterToRouterProtocol? { get set }
-    func viewDidLoad()
-    func getToSpecie(with id:String)
-    func didSelect(atIndex index: Int, andIdSpecie specie: String)
+protocol ChoosePokedex_ViewToPresenterProtocol: AnyObject {
+	var view: ChoosePokedex_PresenterToViewProtocol? { get set }
+	var interactor: ChoosePokedex_PresenterToInteractorProtocol? { get set }
+	var router: ChoosePokedex_PresenterToRouterProtocol? { get set }
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -49,10 +48,8 @@ protocol AllPokemon_ViewToPresenterProtocol: AnyObject {
  */
 
 // MARK: PRESENTER -> INTERACTOR
-protocol AllPokemon_PresenterToInteractorProtocol: AnyObject {
-    var presenter: AllPokemon_InteractorToPresenterProtocol? { get set }
-    func getAllPokemon()
-    func getToSpecieToInteractor(with id:String)
+protocol ChoosePokedex_PresenterToInteractorProtocol: AnyObject {
+    var presenter: ChoosePokedex_InteractorToPresenterProtocol? { get set }
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -74,10 +71,7 @@ protocol AllPokemon_PresenterToInteractorProtocol: AnyObject {
  */
 
 // MARK: INTERACTOR -> PRESENTER
-protocol AllPokemon_InteractorToPresenterProtocol: AnyObject {
-    func getAllPokemonFromInteractor(withPokemon pokemon: AllPokemonResponse)
-    func getSpecieInfoFromInteractor(withSpecie specie: SpeciesPokemonResponse)
-    func errorFromInteractor(with error: Error)
+protocol ChoosePokedex_InteractorToPresenterProtocol: AnyObject {
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -93,11 +87,8 @@ protocol AllPokemon_InteractorToPresenterProtocol: AnyObject {
  */
 
 // MARK: PRESENTER -> VIEW
-protocol AllPokemon_PresenterToViewProtocol: AnyObject {
-    var presenter: AllPokemon_ViewToPresenterProtocol? { get set }
-    func updateView(from pokemon: AllPokemonResponse)
-    func updateInfo(withSpecie specie: SpeciesPokemonResponse)
-    func update(with error: Error)
+protocol ChoosePokedex_PresenterToViewProtocol: AnyObject {
+    var presenter: ChoosePokedex_ViewToPresenterProtocol? { get set }
 }
 
 //MARK: - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -112,11 +103,5 @@ protocol AllPokemon_PresenterToViewProtocol: AnyObject {
  */
 
 // MARK: PRESENTER -> ROUTER
-protocol AllPokemon_PresenterToRouterProtocol: AnyObject {
-    func goToDetailPokemon(atIndex index: Int, idSpecie: String, andView view: AllPokemon_PresenterToViewProtocol)
-}
-
-
-protocol PathsProtocol {
-    var strPathToUse: String { get }
+protocol ChoosePokedex_PresenterToRouterProtocol: AnyObject {
 }

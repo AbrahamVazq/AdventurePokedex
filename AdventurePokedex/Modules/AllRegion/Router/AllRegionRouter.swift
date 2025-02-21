@@ -1,8 +1,6 @@
 //  AllRegionRouter.swift
 //  AdventurePokedex
-//
 //  Created by Abraham Vazquez on 14/02/25.
-//  
 //  ViperTemplate v.0.0.1 - (2023, NS-Bionick Development Team)
 
 import UIKit
@@ -27,5 +25,17 @@ class AllRegionRouter {
 }
 
 extension AllRegionRouter: AllRegion_PresenterToRouterProtocol {
-    
+    func goToChooseRegion(withId idRegion: Int, orPokeRegion region: PokeGeneral, andview view: AllRegion_PresenterToViewProtocol) {
+        if let view = view as? AllRegionViewController {
+            if idRegion != 9 {
+                let vc = ChoosePokedexViewController()
+                vc.idToShowRegion = idRegion
+                vc.modalPresentationStyle = .automatic
+                view.navigationController?.present(vc, animated: true)
+            } else {
+                let vc = PokeRegionRouter.createModule(withRegion: region)
+                view.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 }

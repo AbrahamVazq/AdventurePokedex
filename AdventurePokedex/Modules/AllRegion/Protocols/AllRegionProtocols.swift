@@ -12,6 +12,7 @@ protocol AllRegion_ViewToPresenterProtocol: AnyObject {
 	var router: AllRegion_PresenterToRouterProtocol? { get set }
     
     func goToTypes()
+    func didSelect(withRegion idRegion: Int, orPokeRegion region: PokeGeneral)
 }
 
 
@@ -43,4 +44,6 @@ protocol AllRegion_PresenterToViewProtocol: AnyObject {
 
 // MARK: PRESENTER -> ROUTER
 protocol AllRegion_PresenterToRouterProtocol: AnyObject {
+  //  func goToRegion(withRegion idRegion: Int, andView view: AllRegion_PresenterToViewProtocol)
+    func goToChooseRegion(withId idRegion: Int,orPokeRegion region: PokeGeneral, andview view: AllRegion_PresenterToViewProtocol)
 }
